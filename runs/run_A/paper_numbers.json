@@ -2,7 +2,7 @@
  "_meta": {
   "notebook": "Code_6",
   "kind": "run",
-  "data_version": "data_v2",
+  "data_version": "benchmark",
   "run_id": "run_A",
   "config_hash": "d1a9e5276230",
   "core_version": "2.0.0",
@@ -10,7 +10,7 @@
  },
  "data": {
   "run_id": "run_A",
-  "data_version": "data_v2",
+  "data_version": "benchmark",
   "human_evaluation": {
    "status": "computed from completed sheets",
    "n_items_both_raters": 200,

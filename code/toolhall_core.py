@@ -104,9 +104,9 @@ TAXONOMY = {
 
 DEFAULT_CONFIG = {
     "run_id": "run_A",
-    "data_version": "data_v2",
+    "data_version": "benchmark",
     "seed": 42,
-    "drive_root": "/content/drive/MyDrive/hallucination_project_v2",
+    "drive_root": "/content/drive/MyDrive/hallucination_project",
 
     "benchmark": {
         "n_clean": 1000,
@@ -309,7 +309,7 @@ def load_json(path, cfg, kind='run', check=True):
         payload = json.load(f)
     if not (isinstance(payload, dict) and '_meta' in payload and 'data' in payload):
         raise ValueError(f"{path} was not written by save_json (old-format file?). "
-                         f"Regenerate it with the v2 notebooks.")
+                         f"Regenerate it with the current notebooks.")
     meta = payload['_meta']
     if check:
         if meta.get('data_version') != cfg['data_version']:

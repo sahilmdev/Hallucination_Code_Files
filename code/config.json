@@ -1,8 +1,8 @@
 {
   "run_id": "run_A",
-  "data_version": "data_v2",
+  "data_version": "benchmark",
   "seed": 42,
-  "drive_root": "/content/drive/MyDrive/hallucination_project_v2",
+  "drive_root": "/content/drive/MyDrive/hallucination_project",
   "benchmark": {
     "n_clean": 1000,
     "n_per_type": 300,
