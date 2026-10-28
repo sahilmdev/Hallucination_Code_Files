@@ -1,0 +1,158 @@
+{
+  "run_id": "run_A",
+  "data_version": "data_v2",
+  "seed": 42,
+  "drive_root": "/content/drive/MyDrive/hallucination_project_v2",
+  "benchmark": {
+    "n_clean": 1000,
+    "n_per_type": 300,
+    "max_calls_per_function": 3,
+    "multi_error_k": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "n_per_k": 300,
+    "tune_frac": 0.3,
+    "wrong_value_mode": "donor_swap",
+    "cast_reference_values": true
+  },
+  "envelope": {
+    "accepted_key_sets": [
+      [
+        "function",
+        "parameters"
+      ]
+    ]
+  },
+  "validator": {
+    "check_format": true,
+    "check_function": true,
+    "check_extra": true,
+    "check_missing": true,
+    "check_type": true,
+    "check_value": true,
+    "check_grounding": false,
+    "unknown_required_policy": "not_required",
+    "empty_is_unset": true
+  },
+  "type_trust": {
+    "mode": "adaptive",
+    "tau": 0.5,
+    "tau_grid": [
+      0.0,
+      0.2,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      0.95,
+      1.0
+    ],
+    "min_obs": 3,
+    "prior_agree": 1.0,
+    "prior_disagree": 0.0
+  },
+  "grounding": {
+    "min_len": 3,
+    "fuzzy_threshold": 0.85
+  },
+  "matcher": {
+    "model_name": "sentence-transformers/all-MiniLM-L6-v2",
+    "use_semantic": true,
+    "use_edit": true,
+    "w_semantic": 0.75,
+    "min_score": 0.55,
+    "topk": 20,
+    "w_semantic_grid": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "min_score_grid": [
+      0.45,
+      0.55,
+      0.65,
+      0.75
+    ]
+  },
+  "corrector": {
+    "max_iterations": 3,
+    "max_iterations_grid": [
+      1,
+      2,
+      3,
+      5,
+      8
+    ],
+    "fixes_per_iteration": 1,
+    "fix_format": true,
+    "fix_function": true,
+    "fix_extra": true,
+    "fix_missing": true,
+    "fix_type": true,
+    "fix_value": true,
+    "fix_value_from_query": false
+  },
+  "noise": {
+    "rates": [
+      0.0,
+      0.05,
+      0.1,
+      0.2,
+      0.3
+    ],
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "kinds": [
+      "type_flip",
+      "required_flip",
+      "drop_param",
+      "rename_param"
+    ]
+  },
+  "bootstrap": {
+    "n": 1000,
+    "alpha": 0.05
+  },
+  "models": {
+    "nli_model": "cross-encoder/nli-deberta-v3-small",
+    "bertscore_model": "roberta-large",
+    "llm_baseline": "Qwen/Qwen2.5-1.5B-Instruct",
+    "llm_baseline_limit": 350,
+    "generation_models": [
+      "Qwen/Qwen2.5-0.5B-Instruct",
+      "Qwen/Qwen2.5-1.5B-Instruct",
+      "Qwen/Qwen2.5-3B-Instruct",
+      "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "microsoft/Phi-3.5-mini-instruct"
+    ],
+    "judge_model": "Qwen/Qwen2.5-3B-Instruct",
+    "max_new_tokens": 256
+  },
+  "real_eval": {
+    "known_tool_frac": 0.5,
+    "known_calibration_frac": 0.5
+  },
+  "retrieval": {
+    "max_results": 4,
+    "nli_entail_threshold": 0.5,
+    "query_modes": [
+      "schema_names",
+      "user_query"
+    ],
+    "sleep_seconds": 0.5
+  },
+  "human_eval": {
+    "n_items": 200,
+    "n_practice": 20
+  }
+}

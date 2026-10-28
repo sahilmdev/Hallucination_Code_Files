@@ -1,0 +1,2183 @@
+{
+ "_meta": {
+  "notebook": "Code_6",
+  "kind": "run",
+  "data_version": "data_v2",
+  "run_id": "run_A",
+  "config_hash": "d1a9e5276230",
+  "core_version": "2.0.0",
+  "created_utc": "2026-10-25T21:08:51Z"
+ },
+ "data": {
+  "tables": {
+   "benchmark_composition": {
+    "header": [
+     "label",
+     "examples"
+    ],
+    "rows": [
+     [
+      "EXTRA_PARAMETER",
+      300
+     ],
+     [
+      "MISSING_PARAMETER",
+      300
+     ],
+     [
+      "NONE",
+      1000
+     ],
+     [
+      "WRONG_FORMAT",
+      300
+     ],
+     [
+      "WRONG_FUNCTION",
+      300
+     ],
+     [
+      "WRONG_TYPE",
+      300
+     ],
+     [
+      "WRONG_VALUE",
+      300
+     ],
+     [
+      "total",
+      2800
+     ]
+    ],
+    "caption": "Single-error benchmark composition"
+   },
+   "splits": {
+    "header": [
+     "split",
+     "tune",
+     "test",
+     "functions in both"
+    ],
+    "rows": [
+     [
+      "random",
+      840,
+      1960,
+      459
+     ],
+     [
+      "function_disjoint",
+      863,
+      1937,
+      0
+     ]
+    ],
+    "caption": "Random and function-disjoint splits"
+   },
+   "examples_by_type": {
+    "header": [
+     "label",
+     "reference call",
+     "generated call"
+    ],
+    "rows": [
+     [
+      "NONE",
+      "{\"function\": \"ExplorArc's Password Generation API.Password Generation\", \"parameters\": {\"le",
+      "{\"function\": \"ExplorArc's Password Generation API.Password Generation\", \"parameters\": {\"le"
+     ],
+     [
+      "WRONG_TYPE",
+      "{\"function\": \"Football Highlight.Elhighlights\", \"parameters\": {\"url\": \"https://acrtadeon.e",
+      "{\"function\": \"Football Highlight.Elhighlights\", \"parameters\": {\"url\": [\"https://acrtadeon."
+     ],
+     [
+      "MISSING_PARAMETER",
+      "{\"function\": \"Cancel_Appointment\", \"parameters\": {\"appointment_id\": \"123456\"}}",
+      "{\"function\": \"Cancel_Appointment\", \"parameters\": {}}"
+     ],
+     [
+      "WRONG_VALUE",
+      "{\"function\": \"Words of Wisdom - The Famous Quotes API./quotes\", \"parameters\": {\"author\": \"",
+      "{\"function\": \"Words of Wisdom - The Famous Quotes API./quotes\", \"parameters\": {\"author\": \""
+     ],
+     [
+      "EXTRA_PARAMETER",
+      "{\"function\": \"Vuelos.Aeropuerto\", \"parameters\": {\"where\": \"\"}}",
+      "{\"function\": \"Vuelos.Aeropuerto\", \"parameters\": {\"where\": \"\", \"include_metadata\": 1}}"
+     ],
+     [
+      "WRONG_FUNCTION",
+      "{\"function\": \"TokopediaApi.Search Product\", \"parameters\": {\"query\": \"Celana Jeans\", \"act\":",
+      "{\"function\": \"TokopediaApi.NonExistent\", \"parameters\": {\"query\": \"Celana Jeans\", \"act\": \"s"
+     ],
+     [
+      "WRONG_FORMAT",
+      "{\"function\": \"dimondevosint.Photo from given number\", \"parameters\": {\"phone\": \"+7999999999",
+      "{\"tool\": \"dimondevosint.Photo from given number\", \"tool_input\": {\"phone\": \"+79999999999\"}}"
+     ],
+     [
+      "MULTI_2",
+      "{\"function\": \"Amazon Data Scraper _v2.Get Amazon Search results\", \"parameters\": {\"searchQu",
+      "{\"function\": \"Amazon Data Scraper _v2.Get Amazon Search results_new\", \"parameters\": {}}"
+     ],
+     [
+      "MULTI_3",
+      "{\"function\": \"Domain Checker.DNS\", \"parameters\": {\"domain\": \"rapidapi.com\"}}",
+      "{\"function_name\": \"Domain Checker.NonExistent\", \"function_params\": {}}"
+     ],
+     [
+      "MULTI_4",
+      "{\"function\": \"URL Analysis.url-analysis\", \"parameters\": {\"url\": \"cleverbikes.myshopify.com",
+      "{\"type\": \"function\", \"function\": {\"name\": \"URL Analysis.NonExistent\", \"arguments\": \"{\\\"inc"
+     ]
+    ],
+    "caption": "One example per error type (before / after injection)"
+   },
+   "classwise_random": {
+    "header": [
+     "class",
+     "precision",
+     "recall",
+     "F1",
+     "support"
+    ],
+    "rows": [
+     [
+      "NONE",
+      0.7710706150341685,
+      0.9671428571428572,
+      0.8580481622306717,
+      700
+     ],
+     [
+      "WRONG_FUNCTION",
+      1.0,
+      1.0,
+      1.0,
+      210
+     ],
+     [
+      "EXTRA_PARAMETER",
+      1.0,
+      1.0,
+      1.0,
+      210
+     ],
+     [
+      "WRONG_TYPE",
+      0.8677685950413223,
+      1.0,
+      0.9292035398230089,
+      210
+     ],
+     [
+      "WRONG_VALUE",
+      0.0,
+      0.0,
+      0.0,
+      210
+     ],
+     [
+      "MISSING_PARAMETER",
+      1.0,
+      1.0,
+      1.0,
+      210
+     ],
+     [
+      "WRONG_FORMAT",
+      1.0,
+      1.0,
+      1.0,
+      210
+     ],
+     [
+      "macro",
+      "",
+      "",
+      0.8267502431505258,
+      ""
+     ]
+    ],
+    "caption": "Class-wise precision, recall and F1 (random test split)"
+   },
+   "classwise_function_disjoint": {
+    "header": [
+     "class",
+     "precision",
+     "recall",
+     "F1",
+     "support"
+    ],
+    "rows": [
+     [
+      "NONE",
+      0.7732884399551067,
+      0.9842857142857143,
+      0.8661219358893777,
+      700
+     ],
+     [
+      "WRONG_FUNCTION",
+      1.0,
+      1.0,
+      1.0,
+      207
+     ],
+     [
+      "EXTRA_PARAMETER",
+      1.0,
+      1.0,
+      1.0,
+      209
+     ],
+     [
+      "WRONG_TYPE",
+      0.9147982062780269,
+      0.9807692307692307,
+      0.9466357308584685,
+      208
+     ],
+     [
+      "WRONG_VALUE",
+      0.0,
+      0.0,
+      0.0,
+      206
+     ],
+     [
+      "MISSING_PARAMETER",
+      1.0,
+      1.0,
+      1.0,
+      204
+     ],
+     [
+      "WRONG_FORMAT",
+      1.0,
+      1.0,
+      1.0,
+      203
+     ],
+     [
+      "macro",
+      "",
+      "",
+      0.8303939523925494,
+      ""
+     ]
+    ],
+    "caption": "Class-wise precision, recall and F1 (function-disjoint test split)"
+   },
+   "main_results": {
+    "header": [
+     "split",
+     "bal. acc",
+     "F1",
+     "FPR",
+     "FNR",
+     "macro-F1",
+     "schema-valid (H)",
+     "exact (all)",
+     "exact (H)"
+    ],
+    "rows": [
+     [
+      "random",
+      0.9038095238095238,
+      0.9043552519214346,
+      0.032857142857142856,
+      0.1595238095238095,
+      0.8267502431505258,
+      0.9785714285714285,
+      0.7663265306122449,
+      0.6507936507936508
+     ],
+     [
+      "function_disjoint",
+      0.9104937059706664,
+      0.9067017082785808,
+      0.015714285714285715,
+      0.16329830234438156,
+      0.8303939523925494,
+      0.98464025869038,
+      0.774909654104285,
+      0.6540016168148747
+     ]
+    ],
+    "caption": "Main results: detection, classification, correction, intent proxy (H = hallucinated calls)"
+   },
+   "ablation_random": {
+    "header": [
+     "variant",
+     "det. F1",
+     "exact",
+     "Δ exact",
+     "McNemar p"
+    ],
+    "rows": [
+     [
+      "full",
+      0.9043552519214346,
+      0.7663265306122449,
+      0.0,
+      ""
+     ],
+     [
+      "detect_only (no correction)",
+      0.9043552519214346,
+      0.3454081632653061,
+      -0.42091836734693877,
+      8.93888958630339e-249
+     ],
+     [
+      "single correction pass",
+      0.9043552519214346,
+      0.7663265306122449,
+      0.0,
+      1.0
+     ],
+     [
+      "max passes = 1",
+      0.9043552519214346,
+      0.7663265306122449,
+      0.0,
+      1.0
+     ],
+     [
+      "max passes = 2",
+      0.9043552519214346,
+      0.7622448979591837,
+      -0.004081632653061162,
+      0.007812500000000002
+     ],
+     [
+      "max passes = 3",
+      0.9043552519214346,
+      0.7622448979591837,
+      -0.004081632653061162,
+      0.007812500000000002
+     ],
+     [
+      "max passes = 5",
+      0.9043552519214346,
+      0.7622448979591837,
+      -0.004081632653061162,
+      0.007812500000000002
+     ],
+     [
+      "max passes = 8",
+      0.9043552519214346,
+      0.7622448979591837,
+      -0.004081632653061162,
+      0.007812500000000002
+     ],
+     [
+      "fix all violations per pass",
+      0.9043552519214346,
+      0.7637755102040816,
+      -0.0025510204081632404,
+      0.0625
+     ],
+     [
+      "no type check",
+      0.8,
+      0.6719387755102041,
+      -0.09438775510204078,
+      1.8711265118546783e-38
+     ],
+     [
+      "type check strict (no calibration)",
+      0.9025946405784773,
+      0.7622448979591837,
+      -0.004081632653061162,
+      0.007812500000000002
+     ],
+     [
+      "type check skip-list (old method)",
+      0.9033631332481906,
+      0.763265306122449,
+      -0.003061224489795844,
+      0.109375
+     ],
+     [
+      "no format check",
+      0.7992512868507253,
+      0.661734693877551,
+      -0.10459183673469385,
+      3.889384548663275e-62
+     ],
+     [
+      "no format fix",
+      0.9043552519214346,
+      0.661734693877551,
+      -0.10459183673469385,
+      3.889384548663275e-62
+     ],
+     [
+      "no function correction",
+      0.9043552519214346,
+      0.6658163265306123,
+      -0.10051020408163258,
+      9.956824444577849e-60
+     ],
+     [
+      "no extra-param removal",
+      0.9043552519214346,
+      0.6591836734693878,
+      -0.1071428571428571,
+      1.215432671457262e-63
+     ],
+     [
+      "no missing-param fill",
+      0.9043552519214346,
+      0.7663265306122449,
+      0.0,
+      1.0
+     ],
+     [
+      "no type cast",
+      0.9043552519214346,
+      0.6719387755102041,
+      -0.09438775510204078,
+      1.8711265118546783e-38
+     ],
+     [
+      "matcher: edit distance only",
+      0.9043552519214346,
+      0.7673469387755102,
+      0.0010204081632653184,
+      0.6875000000000016
+     ],
+     [
+      "matcher: semantic only",
+      0.9043552519214346,
+      0.7540816326530613,
+      -0.012244897959183598,
+      1.1920928955078144e-07
+     ],
+     [
+      "+ query grounding (schema+query)",
+      0.8493434692467173,
+      0.5285714285714286,
+      -0.2377551020408163,
+      1.0315684164990258e-119
+     ]
+    ],
+    "caption": "Ablation (random test split)"
+   },
+   "ablation_function_disjoint": {
+    "header": [
+     "variant",
+     "det. F1",
+     "exact",
+     "Δ exact",
+     "McNemar p"
+    ],
+    "rows": [
+     [
+      "full",
+      0.9067017082785808,
+      0.774909654104285,
+      0.0,
+      ""
+     ],
+     [
+      "detect_only (no correction)",
+      0.9067017082785808,
+      0.35570469798657717,
+      -0.41920495611770786,
+      7.322738349099499e-245
+     ],
+     [
+      "single correction pass",
+      0.9067017082785808,
+      0.774909654104285,
+      0.0,
+      1.0
+     ],
+     [
+      "max passes = 1",
+      0.9067017082785808,
+      0.774909654104285,
+      0.0,
+      1.0
+     ],
+     [
+      "max passes = 2",
+      0.9067017082785808,
+      0.7718120805369127,
+      -0.0030975735673722804,
+      0.031250000000000014
+     ],
+     [
+      "max passes = 3",
+      0.9067017082785808,
+      0.7718120805369127,
+      -0.0030975735673722804,
+      0.031250000000000014
+     ],
+     [
+      "max passes = 5",
+      0.9067017082785808,
+      0.7718120805369127,
+      -0.0030975735673722804,
+      0.031250000000000014
+     ],
+     [
+      "max passes = 8",
+      0.9067017082785808,
+      0.7718120805369127,
+      -0.0030975735673722804,
+      0.031250000000000014
+     ],
+     [
+      "fix all violations per pass",
+      0.9067017082785808,
+      0.7728446050593701,
+      -0.0020650490449148906,
+      0.125
+     ],
+     [
+      "no type check",
+      0.7990291262135922,
+      0.6763035622096025,
+      -0.0986060918946825,
+      6.0107188910147676e-46
+     ],
+     [
+      "type check strict (no calibration)",
+      0.9028620988725066,
+      0.7656169334021683,
+      -0.00929272070211673,
+      0.0005335211753845287
+     ],
+     [
+      "type check skip-list (old method)",
+      0.9028620988725066,
+      0.7656169334021683,
+      -0.00929272070211673,
+      0.0005335211753845287
+     ],
+     [
+      "no format check",
+      0.8023032629558541,
+      0.6721734641197729,
+      -0.10273618998451217,
+      2.489206111144453e-60
+     ],
+     [
+      "no format fix",
+      0.9067017082785808,
+      0.6721734641197729,
+      -0.10273618998451217,
+      2.489206111144453e-60
+     ],
+     [
+      "no function correction",
+      0.9067017082785808,
+      0.6726897263810016,
+      -0.10221992772328348,
+      4.978412222288916e-60
+     ],
+     [
+      "no extra-param removal",
+      0.9067017082785808,
+      0.6670108415074858,
+      -0.10789881259679923,
+      2.4308653429145285e-63
+     ],
+     [
+      "no missing-param fill",
+      0.9067017082785808,
+      0.774909654104285,
+      0.0,
+      1.0
+     ],
+     [
+      "no type cast",
+      0.9067017082785808,
+      0.6763035622096025,
+      -0.0986060918946825,
+      6.0107188910147676e-46
+     ],
+     [
+      "matcher: edit distance only",
+      0.9067017082785808,
+      0.7743933918430562,
+      -0.0005162622612288059,
+      1.0
+     ],
+     [
+      "matcher: semantic only",
+      0.9067017082785808,
+      0.7558079504388229,
+      -0.019101703665462155,
+      1.455191522836694e-10
+     ],
+     [
+      "+ query grounding (schema+query)",
+      0.8479717813051146,
+      0.537429013939081,
+      -0.23748064016520398,
+      7.125615526227289e-119
+     ]
+    ],
+    "caption": "Ablation (function-disjoint test split)"
+   },
+   "multi_error": {
+    "header": [
+     "errors per call",
+     "n",
+     "detected",
+     "schema-valid",
+     "exact",
+     "set acc (trace)"
+    ],
+    "rows": [
+     [
+      "1",
+      300,
+      0.8566666666666667,
+      0.9766666666666667,
+      0.7166666666666667,
+      0.8466666666666667
+     ],
+     [
+      "2",
+      300,
+      1.0,
+      0.63,
+      0.30666666666666664,
+      0.5266666666666666
+     ],
+     [
+      "3",
+      300,
+      1.0,
+      0.18666666666666668,
+      0.0,
+      0.18333333333333332
+     ],
+     [
+      "4",
+      300,
+      1.0,
+      0.0,
+      0.0,
+      0.03666666666666667
+     ]
+    ],
+    "caption": "Calls with several simultaneous errors"
+   },
+   "type_strategies_random": {
+    "header": [
+     "strategy",
+     "FPR",
+     "WRONG_TYPE recall",
+     "det. F1",
+     "exact"
+    ],
+    "rows": [
+     [
+      "off",
+      0.0,
+      0.0,
+      0.8,
+      0.6719387755102041
+     ],
+     [
+      "strict",
+      0.04285714285714286,
+      1.0,
+      0.9025946405784773,
+      0.7622448979591837
+     ],
+     [
+      "skiplist",
+      0.04,
+      1.0,
+      0.9033631332481906,
+      0.763265306122449
+     ],
+     [
+      "adaptive tau=0.0",
+      0.04285714285714286,
+      1.0,
+      0.9025946405784773,
+      0.7622448979591837
+     ],
+     [
+      "adaptive tau=0.2",
+      0.032857142857142856,
+      1.0,
+      0.9043552519214346,
+      0.7663265306122449
+     ],
+     [
+      "adaptive tau=0.4",
+      0.032857142857142856,
+      1.0,
+      0.9043552519214346,
+      0.7663265306122449
+     ],
+     [
+      "adaptive tau=0.5",
+      0.032857142857142856,
+      1.0,
+      0.9043552519214346,
+      0.7663265306122449
+     ],
+     [
+      "adaptive tau=0.6",
+      0.032857142857142856,
+      1.0,
+      0.9043552519214346,
+      0.7663265306122449
+     ],
+     [
+      "adaptive tau=0.7",
+      0.027142857142857142,
+      0.9857142857142858,
+      0.9040274207369322,
+      0.7668367346938776
+     ],
+     [
+      "adaptive tau=0.8",
+      0.017142857142857144,
+      0.8095238095238095,
+      0.886652078774617,
+      0.7525510204081632
+     ],
+     [
+      "adaptive tau=0.9",
+      0.014285714285714285,
+      0.7571428571428571,
+      0.8820422535211268,
+      0.7474489795918368
+     ],
+     [
+      "adaptive tau=0.95",
+      0.014285714285714285,
+      0.6619047619047619,
+      0.8716126166148378,
+      0.7372448979591837
+     ],
+     [
+      "adaptive tau=1.0",
+      0.012857142857142857,
+      0.21904761904761905,
+      0.8233657858136302,
+      0.6903061224489796
+     ]
+    ],
+    "caption": "Type-checking strategies (random)"
+   },
+   "type_strategies_function_disjoint": {
+    "header": [
+     "strategy",
+     "FPR",
+     "WRONG_TYPE recall",
+     "det. F1",
+     "exact"
+    ],
+    "rows": [
+     [
+      "off",
+      0.0,
+      0.0,
+      0.7990291262135922,
+      0.6763035622096025
+     ],
+     [
+      "strict",
+      0.04,
+      1.0,
+      0.9028620988725066,
+      0.7656169334021683
+     ],
+     [
+      "skiplist",
+      0.04,
+      1.0,
+      0.9028620988725066,
+      0.7656169334021683
+     ],
+     [
+      "adaptive tau=0.0",
+      0.04,
+      1.0,
+      0.9028620988725066,
+      0.7656169334021683
+     ],
+     [
+      "adaptive tau=0.2",
+      0.02142857142857143,
+      1.0,
+      0.9070274989087733,
+      0.7743933918430562
+     ],
+     [
+      "adaptive tau=0.4",
+      0.02142857142857143,
+      1.0,
+      0.9070274989087733,
+      0.7743933918430562
+     ],
+     [
+      "adaptive tau=0.5",
+      0.017142857142857144,
+      0.9855769230769231,
+      0.9067833698030635,
+      0.774909654104285
+     ],
+     [
+      "adaptive tau=0.6",
+      0.015714285714285715,
+      0.9807692307692307,
+      0.9067017082785808,
+      0.774909654104285
+     ],
+     [
+      "adaptive tau=0.7",
+      0.015714285714285715,
+      0.9807692307692307,
+      0.9067017082785808,
+      0.774909654104285
+     ],
+     [
+      "adaptive tau=0.8",
+      0.01,
+      0.7211538461538461,
+      0.879783881134624,
+      0.7490965410428497
+     ],
+     [
+      "adaptive tau=0.9",
+      0.01,
+      0.7163461538461539,
+      0.8792792792792792,
+      0.748580278781621
+     ],
+     [
+      "adaptive tau=0.95",
+      0.01,
+      0.7163461538461539,
+      0.8792792792792792,
+      0.748580278781621
+     ],
+     [
+      "adaptive tau=1.0",
+      0.01,
+      0.6346153846153846,
+      0.8701180744777475,
+      0.7398038203407331
+     ]
+    ],
+    "caption": "Type-checking strategies (function-disjoint)"
+   },
+   "wrong_value_settings": {
+    "header": [
+     "setting",
+     "WV detected",
+     "WV exact",
+     "clean FPR",
+     "all exact"
+    ],
+    "rows": [
+     [
+      "random: 1 schema only",
+      0.04285714285714286,
+      0.0,
+      0.032857142857142856,
+      0.7663265306122449
+     ],
+     [
+      "random: 2 schema + query",
+      0.8523809523809524,
+      0.06666666666666667,
+      0.5785714285714286,
+      0.5285714285714286
+     ],
+     [
+      "function_disjoint: 1 schema only",
+      0.038834951456310676,
+      0.0,
+      0.015714285714285715,
+      0.774909654104285
+     ],
+     [
+      "function_disjoint: 2 schema + query",
+      0.8349514563106796,
+      0.06796116504854369,
+      0.5657142857142857,
+      0.537429013939081
+     ],
+     [
+      "random: schema only + retrieval (schema_names)",
+      "",
+      0.0,
+      "",
+      0.7663265306122449
+     ],
+     [
+      "random: schema only + retrieval (user_query)",
+      "",
+      0.0,
+      "",
+      0.7663265306122449
+     ],
+     [
+      "random: schema + query + retrieval (schema_names)",
+      "",
+      0.06666666666666667,
+      "",
+      0.5035714285714286
+     ],
+     [
+      "random: schema + query + retrieval (user_query)",
+      "",
+      0.06666666666666667,
+      "",
+      0.48622448979591837
+     ]
+    ],
+    "caption": "WRONG_VALUE: schema only vs schema + query vs + retrieval"
+   },
+   "baselines_detection_random": {
+    "header": [
+     "method",
+     "deployable",
+     "bal. acc",
+     "F1",
+     "FPR",
+     "FNR",
+     "macro-F1"
+    ],
+    "rows": [
+     [
+      "exact_match_normalised",
+      "no",
+      0.9166666666666667,
+      0.9090909090909091,
+      0.0,
+      0.16666666666666666,
+      ""
+     ],
+     [
+      "exact_match_raw",
+      "no",
+      1.0,
+      1.0,
+      0.0,
+      0.0,
+      ""
+     ],
+     [
+      "token_f1",
+      "no",
+      0.9146825396825398,
+      0.9067245119305857,
+      0.0,
+      0.17063492063492064,
+      ""
+     ],
+     [
+      "function_match",
+      "no",
+      0.5833333333333334,
+      0.2857142857142857,
+      0.0,
+      0.8333333333333334,
+      ""
+     ],
+     [
+      "param_set_match",
+      "no",
+      0.6666666666666666,
+      0.5,
+      0.0,
+      0.6666666666666666,
+      ""
+     ],
+     [
+      "nli_normalised",
+      "no",
+      0.8050793650793651,
+      0.7678916827852997,
+      0.02,
+      0.36984126984126986,
+      ""
+     ],
+     [
+      "nli_raw_json",
+      "no",
+      0.7964285714285715,
+      0.7554904831625184,
+      0.02142857142857143,
+      0.38571428571428573,
+      ""
+     ],
+     [
+      "bertscore_f1",
+      "no",
+      0.9166666666666667,
+      0.9090909090909091,
+      0.0,
+      0.16666666666666666,
+      ""
+     ],
+     [
+      "JSON Schema validation",
+      "yes",
+      0.8631746031746032,
+      0.8857615894039735,
+      0.12285714285714286,
+      0.15079365079365079,
+      0.8021383498792284
+     ],
+     [
+      "schema-only (ours)",
+      "yes",
+      0.9038095238095238,
+      0.9043552519214346,
+      0.032857142857142856,
+      0.1595238095238095,
+      0.8267502431505258
+     ],
+     [
+      "LLM verifier (subset n=350)",
+      "yes",
+      0.5800000000000001,
+      0.730844793713163,
+      0.46,
+      0.38,
+      0.11259438591445883
+     ],
+     [
+      "schema-only on that subset",
+      "yes",
+      0.9033333333333333,
+      0.9136690647482014,
+      0.04,
+      0.15333333333333332,
+      ""
+     ]
+    ],
+    "caption": "Detection: schema-only vs baselines (random test split)"
+   },
+   "baselines_correction_random": {
+    "header": [
+     "method",
+     "exact match"
+    ],
+    "rows": [
+     [
+      "no correction (block flagged calls)",
+      0.3454081632653061
+     ],
+     [
+      "similarity-only correction",
+      0.6622448979591836
+     ],
+     [
+      "schema-only (ours)",
+      0.7663265306122449
+     ],
+     [
+      "LLM corrector (subset)",
+      0.2
+     ],
+     [
+      "schema-only on that subset",
+      0.6971428571428572
+     ]
+    ],
+    "caption": "Correction: schema-only vs baselines (random test split)"
+   },
+   "baselines_detection_function_disjoint": {
+    "header": [
+     "method",
+     "deployable",
+     "bal. acc",
+     "F1",
+     "FPR",
+     "FNR",
+     "macro-F1"
+    ],
+    "rows": [
+     [
+      "exact_match_normalised",
+      "no",
+      0.9179466451091349,
+      0.9106120651695289,
+      0.0,
+      0.16410670978173,
+      ""
+     ],
+     [
+      "exact_match_raw",
+      "no",
+      1.0,
+      1.0,
+      0.0,
+      0.0,
+      ""
+     ],
+     [
+      "token_f1",
+      "no",
+      0.9171382376717866,
+      0.9096518289995593,
+      0.0,
+      0.16572352465642684,
+      ""
+     ],
+     [
+      "function_match",
+      "no",
+      0.5836701697655619,
+      0.2867036011080332,
+      0.0,
+      0.8326596604688763,
+      ""
+     ],
+     [
+      "param_set_match",
+      "no",
+      0.6669361358124495,
+      0.5006060606060606,
+      0.0,
+      0.666127728375101,
+      ""
+     ],
+     [
+      "nli_normalised",
+      "no",
+      0.8134184085922163,
+      0.7747658945293249,
+      0.008571428571428572,
+      0.36459175424413903,
+      ""
+     ],
+     [
+      "nli_raw_json",
+      "no",
+      0.7988393578935212,
+      0.7554890219560878,
+      0.014285714285714285,
+      0.3880355699272433,
+      ""
+     ],
+     [
+      "bertscore_f1",
+      "no",
+      0.9179466451091349,
+      0.9106120651695289,
+      0.0,
+      0.16410670978173,
+      ""
+     ],
+     [
+      "JSON Schema validation",
+      "yes",
+      0.8608424760364939,
+      0.8838383838383839,
+      0.12714285714285714,
+      0.15117219078415522,
+      0.8013782098414025
+     ],
+     [
+      "schema-only (ours)",
+      "yes",
+      0.9104937059706664,
+      0.9067017082785808,
+      0.015714285714285715,
+      0.16329830234438156,
+      0.8303939523925494
+     ],
+     [
+      "LLM verifier (subset n=350)",
+      "yes",
+      0.54,
+      0.6973947895791581,
+      0.5,
+      0.42,
+      0.11379150328277841
+     ],
+     [
+      "schema-only on that subset",
+      "yes",
+      0.8983333333333333,
+      0.9077757685352622,
+      0.04,
+      0.16333333333333333,
+      ""
+     ]
+    ],
+    "caption": "Detection: schema-only vs baselines (function-disjoint test split)"
+   },
+   "baselines_correction_function_disjoint": {
+    "header": [
+     "method",
+     "exact match"
+    ],
+    "rows": [
+     [
+      "no correction (block flagged calls)",
+      0.35570469798657717
+     ],
+     [
+      "similarity-only correction",
+      0.6592669075890553
+     ],
+     [
+      "schema-only (ours)",
+      0.774909654104285
+     ],
+     [
+      "LLM corrector (subset)",
+      0.20285714285714285
+     ],
+     [
+      "schema-only on that subset",
+      0.6971428571428572
+     ]
+    ],
+    "caption": "Correction: schema-only vs baselines (function-disjoint test split)"
+   },
+   "cross_model": {
+    "header": [
+     "model",
+     "decoding",
+     "tools",
+     "n",
+     "parse",
+     "raw exact",
+     "det. F1",
+     "type F1",
+     "final schema-valid",
+     "final exact",
+     "final lenient"
+    ],
+    "rows": [
+     [
+      "Qwen2.5-0.5B-Instruct",
+      "free",
+      "all",
+      162,
+      0.9938271604938271,
+      0.2777777777777778,
+      0.4295302013422819,
+      0.3891417927399936,
+      0.9320987654320988,
+      0.3271604938271605,
+      0.3333333333333333
+     ],
+     [
+      "Qwen2.5-0.5B-Instruct",
+      "free",
+      "known",
+      44,
+      1.0,
+      0.22727272727272727,
+      0.4186046511627907,
+      0.48333333333333334,
+      0.9318181818181818,
+      0.25,
+      0.25
+     ],
+     [
+      "Qwen2.5-0.5B-Instruct",
+      "free",
+      "unseen",
+      118,
+      0.9915254237288136,
+      0.2966101694915254,
+      0.43396226415094347,
+      0.4920634920634921,
+      0.9322033898305084,
+      0.3559322033898305,
+      0.3644067796610169
+     ],
+     [
+      "Qwen2.5-0.5B-Instruct",
+      "constrained",
+      "all",
+      162,
+      1.0,
+      0.15432098765432098,
+      0.32926829268292684,
+      0.1568627450980392,
+      0.9629629629629629,
+      0.16049382716049382,
+      0.16049382716049382
+     ],
+     [
+      "Qwen2.5-0.5B-Instruct",
+      "constrained",
+      "known",
+      44,
+      1.0,
+      0.11363636363636363,
+      0.14285714285714288,
+      0.07142857142857141,
+      1.0,
+      0.11363636363636363,
+      0.11363636363636363
+     ],
+     [
+      "Qwen2.5-0.5B-Instruct",
+      "constrained",
+      "unseen",
+      118,
+      1.0,
+      0.1694915254237288,
+      0.39344262295081966,
+      0.28378378378378377,
+      0.9491525423728814,
+      0.17796610169491525,
+      0.17796610169491525
+     ],
+     [
+      "Qwen2.5-1.5B-Instruct",
+      "free",
+      "all",
+      162,
+      0.9938271604938271,
+      0.48148148148148145,
+      0.25,
+      0.34210647508519854,
+      0.9876543209876543,
+      0.48148148148148145,
+      0.49382716049382713
+     ],
+     [
+      "Qwen2.5-1.5B-Instruct",
+      "free",
+      "known",
+      44,
+      1.0,
+      0.4090909090909091,
+      0.20689655172413793,
+      0.15,
+      0.9772727272727273,
+      0.4090909090909091,
+      0.4318181818181818
+     ],
+     [
+      "Qwen2.5-1.5B-Instruct",
+      "free",
+      "unseen",
+      118,
+      0.9915254237288136,
+      0.5084745762711864,
+      0.26865671641791045,
+      0.33669220945083017,
+      0.9915254237288136,
+      0.5084745762711864,
+      0.5169491525423728
+     ],
+     [
+      "Qwen2.5-1.5B-Instruct",
+      "constrained",
+      "all",
+      162,
+      1.0,
+      0.2962962962962963,
+      0.42758620689655175,
+      0.10555555555555556,
+      0.9814814814814815,
+      0.2962962962962963,
+      0.2962962962962963
+     ],
+     [
+      "Qwen2.5-1.5B-Instruct",
+      "constrained",
+      "known",
+      44,
+      1.0,
+      0.29545454545454547,
+      0.3684210526315789,
+      0.15555555555555556,
+      1.0,
+      0.29545454545454547,
+      0.29545454545454547
+     ],
+     [
+      "Qwen2.5-1.5B-Instruct",
+      "constrained",
+      "unseen",
+      118,
+      1.0,
+      0.2966101694915254,
+      0.44859813084112143,
+      0.13333333333333333,
+      0.9745762711864406,
+      0.2966101694915254,
+      0.2966101694915254
+     ],
+     [
+      "Qwen2.5-3B-Instruct",
+      "free",
+      "all",
+      162,
+      0.9938271604938271,
+      0.4876543209876543,
+      0.288659793814433,
+      0.36253561253561256,
+      0.9691358024691358,
+      0.5,
+      0.5123456790123457
+     ],
+     [
+      "Qwen2.5-3B-Instruct",
+      "free",
+      "known",
+      44,
+      1.0,
+      0.4772727272727273,
+      0.23076923076923078,
+      0.36,
+      0.9772727272727273,
+      0.5,
+      0.5
+     ],
+     [
+      "Qwen2.5-3B-Instruct",
+      "free",
+      "unseen",
+      118,
+      0.9915254237288136,
+      0.4915254237288136,
+      0.30985915492957744,
+      0.36349206349206353,
+      0.9661016949152542,
+      0.5,
+      0.5169491525423728
+     ],
+     [
+      "Qwen2.5-3B-Instruct",
+      "constrained",
+      "all",
+      162,
+      1.0,
+      0.37037037037037035,
+      0.39370078740157477,
+      0.10843373493975905,
+      0.9814814814814815,
+      0.37037037037037035,
+      0.3765432098765432
+     ],
+     [
+      "Qwen2.5-3B-Instruct",
+      "constrained",
+      "known",
+      44,
+      1.0,
+      0.29545454545454547,
+      0.3243243243243243,
+      0.1,
+      1.0,
+      0.29545454545454547,
+      0.29545454545454547
+     ],
+     [
+      "Qwen2.5-3B-Instruct",
+      "constrained",
+      "unseen",
+      118,
+      1.0,
+      0.3983050847457627,
+      0.42222222222222217,
+      0.1509433962264151,
+      0.9745762711864406,
+      0.3983050847457627,
+      0.4067796610169492
+     ],
+     [
+      "TinyLlama-1.1B-Chat-v1.0",
+      "free",
+      "all",
+      162,
+      0.9567901234567902,
+      0.09259259259259259,
+      0.824,
+      0.5183130699088146,
+      0.6975308641975309,
+      0.2345679012345679,
+      0.2345679012345679
+     ],
+     [
+      "TinyLlama-1.1B-Chat-v1.0",
+      "free",
+      "known",
+      44,
+      0.9545454545454546,
+      0.11363636363636363,
+      0.835820895522388,
+      0.6280193236714976,
+      0.6818181818181818,
+      0.2727272727272727,
+      0.2727272727272727
+     ],
+     [
+      "TinyLlama-1.1B-Chat-v1.0",
+      "free",
+      "unseen",
+      118,
+      0.9576271186440678,
+      0.0847457627118644,
+      0.819672131147541,
+      0.5212968633054365,
+      0.7033898305084746,
+      0.22033898305084745,
+      0.22033898305084745
+     ],
+     [
+      "TinyLlama-1.1B-Chat-v1.0",
+      "constrained",
+      "all",
+      162,
+      1.0,
+      0.1728395061728395,
+      0.325,
+      0.1904761904761905,
+      1.0,
+      0.18518518518518517,
+      0.19135802469135801
+     ],
+     [
+      "TinyLlama-1.1B-Chat-v1.0",
+      "constrained",
+      "known",
+      44,
+      1.0,
+      0.1590909090909091,
+      0.3181818181818182,
+      0.1794871794871795,
+      1.0,
+      0.1590909090909091,
+      0.1590909090909091
+     ],
+     [
+      "TinyLlama-1.1B-Chat-v1.0",
+      "constrained",
+      "unseen",
+      118,
+      1.0,
+      0.17796610169491525,
+      0.3275862068965517,
+      0.29411764705882354,
+      1.0,
+      0.19491525423728814,
+      0.2033898305084746
+     ],
+     [
+      "Phi-3.5-mini-instruct",
+      "free",
+      "all",
+      162,
+      1.0,
+      0.4444444444444444,
+      0.33333333333333337,
+      0.24842712842712844,
+      0.9197530864197531,
+      0.4567901234567901,
+      0.4691358024691358
+     ],
+     [
+      "Phi-3.5-mini-instruct",
+      "free",
+      "known",
+      44,
+      1.0,
+      0.3409090909090909,
+      0.4736842105263158,
+      0.2,
+      0.8409090909090909,
+      0.36363636363636365,
+      0.36363636363636365
+     ],
+     [
+      "Phi-3.5-mini-instruct",
+      "free",
+      "unseen",
+      118,
+      1.0,
+      0.4830508474576271,
+      0.2571428571428572,
+      0.23951048951048948,
+      0.9491525423728814,
+      0.4915254237288136,
+      0.5084745762711864
+     ],
+     [
+      "Phi-3.5-mini-instruct",
+      "constrained",
+      "all",
+      162,
+      1.0,
+      0.345679012345679,
+      0.10714285714285715,
+      0.06666666666666668,
+      1.0,
+      0.345679012345679,
+      0.345679012345679
+     ],
+     [
+      "Phi-3.5-mini-instruct",
+      "constrained",
+      "known",
+      44,
+      1.0,
+      0.29545454545454547,
+      0.0,
+      0.0,
+      1.0,
+      0.29545454545454547,
+      0.29545454545454547
+     ],
+     [
+      "Phi-3.5-mini-instruct",
+      "constrained",
+      "unseen",
+      118,
+      1.0,
+      0.3644067796610169,
+      0.14814814814814814,
+      0.13793103448275862,
+      1.0,
+      0.3644067796610169,
+      0.3644067796610169
+     ]
+    ],
+    "caption": "Real LLM tool calls: raw vs after the schema-only pipeline, known vs unseen tools"
+   },
+   "selfcheck_baseline": {
+    "header": [
+     "model",
+     "method",
+     "bal. acc",
+     "precision",
+     "recall",
+     "F1",
+     "FPR"
+    ],
+    "rows": [
+     [
+      "Qwen2.5-1.5B-Instruct",
+      "SelfCheckGPT-style",
+      0.7773584905660378,
+      0.7868852459016393,
+      0.8,
+      0.7933884297520661,
+      0.24528301886792453
+     ],
+     [
+      "Qwen2.5-1.5B-Instruct",
+      "schema-only (ours)",
+      0.5666666666666667,
+      1.0,
+      0.13333333333333333,
+      0.23529411764705882,
+      0.0
+     ],
+     [
+      "Qwen2.5-1.5B-Instruct",
+      "ours OR SelfCheck",
+      0.7940251572327044,
+      0.7936507936507936,
+      0.8333333333333334,
+      0.8130081300813008,
+      0.24528301886792453
+     ],
+     [
+      "Qwen2.5-3B-Instruct",
+      "SelfCheckGPT-style",
+      0.8601880877742947,
+      0.92,
+      0.7931034482758621,
+      0.851851851851852,
+      0.07272727272727272
+     ],
+     [
+      "Qwen2.5-3B-Instruct",
+      "schema-only (ours)",
+      0.5689655172413793,
+      1.0,
+      0.13793103448275862,
+      0.2424242424242424,
+      0.0
+     ],
+     [
+      "Qwen2.5-3B-Instruct",
+      "ours OR SelfCheck",
+      0.868808777429467,
+      0.9215686274509803,
+      0.8103448275862069,
+      0.8623853211009175,
+      0.07272727272727272
+     ],
+     [
+      "Phi-3.5-mini-instruct",
+      "SelfCheckGPT-style",
+      0.7952933591231464,
+      0.9019607843137255,
+      0.696969696969697,
+      0.7863247863247863,
+      0.10638297872340426
+     ],
+     [
+      "Phi-3.5-mini-instruct",
+      "schema-only (ours)",
+      0.5984848484848485,
+      1.0,
+      0.19696969696969696,
+      0.3291139240506329,
+      0.0
+     ],
+     [
+      "Phi-3.5-mini-instruct",
+      "ours OR SelfCheck",
+      0.8255963894261766,
+      0.9090909090909091,
+      0.7575757575757576,
+      0.8264462809917356,
+      0.10638297872340426
+     ]
+    ],
+    "caption": "Published baseline: SelfCheckGPT-style sampling consistency (3 samples) vs schema-only on real LLM calls"
+   },
+   "selfcheck_vs_human": {
+    "header": [
+     "method",
+     "n",
+     "bal. acc",
+     "precision",
+     "recall",
+     "F1",
+     "FPR"
+    ],
+    "rows": [
+     [
+      "SelfCheckGPT-style",
+      110,
+      0.7053360351232691,
+      0.7352941176470589,
+      0.7936507936507936,
+      0.7633587786259542,
+      0.3829787234042553
+     ],
+     [
+      "schema-only (ours)",
+      110,
+      0.8333333333333333,
+      1.0,
+      0.6666666666666666,
+      0.8,
+      0.0
+     ],
+     [
+      "ours OR SelfCheck",
+      110,
+      0.7767646065518405,
+      0.7662337662337663,
+      0.9365079365079365,
+      0.842857142857143,
+      0.3829787234042553
+     ]
+    ],
+    "caption": "Detection against the human labels (same items)"
+   },
+   "correction_examples_synthetic": {
+    "header": [
+     "true error",
+     "outcome",
+     "category",
+     "generated call",
+     "system output",
+     "fixes applied"
+    ],
+    "rows": [
+     [
+      "WRONG_FUNCTION",
+      "success",
+      "OK_CORRECTED_EXACT",
+      "{\"function\": \"get_YouTube Influencer Search.getSearchResults\", \"parameters\": {\"i",
+      "{\"function\": \"YouTube Influencer Search.getSearchResults\", \"parameters\": {\"id\": ",
+      "function 'get_YouTube Influencer Search.getSearchResults' ->"
+     ],
+     [
+      "WRONG_FUNCTION",
+      "failure",
+      "CORRECTION_INCOMPLETE",
+      "{\"function\": \"DeFi Watch.NonExistent\", \"parameters\": {\"address\": \"\", \"chain\": \"\"",
+      "{\"function\": \"DeFi Watch.NonExistent\", \"parameters\": {\"address\": \"\", \"chain\": \"\"",
+      "-"
+     ],
+     [
+      "EXTRA_PARAMETER",
+      "success",
+      "OK_CORRECTED_EXACT",
+      "{\"function\": \"ChurchApp.Search Contacts\", \"parameters\": {\"q\": \"\", \"name\": \"\", \"p",
+      "{\"function\": \"ChurchApp.Search Contacts\", \"parameters\": {\"q\": \"\", \"name\": \"\", \"p",
+      "removed undeclared 'max_results'"
+     ],
+     [
+      "WRONG_TYPE",
+      "success",
+      "OK_CORRECTED_EXACT",
+      "{\"function\": \"Opensea_v2.Retrieve collection stats\", \"parameters\": {\"collection_",
+      "{\"function\": \"Opensea_v2.Retrieve collection stats\", \"parameters\": {\"collection_",
+      "cast 'collection_slug' -> string"
+     ],
+     [
+      "WRONG_TYPE",
+      "failure",
+      "CORRECTION_INCOMPLETE",
+      "{\"function\": \"Aliexpress DataHub.Aliexpress - Item Shipping Detail\", \"parameters",
+      "{\"function\": \"Aliexpress DataHub.Aliexpress - Item Shipping Detail\", \"parameters",
+      "cast 'itemId' -> number"
+     ],
+     [
+      "WRONG_VALUE",
+      "failure",
+      "MISSED_DETECTION",
+      "{\"function\": \"Real-Time Product Search.Search\", \"parameters\": {\"q\": \"49.597, -8.",
+      "{\"function\": \"Real-Time Product Search.Search\", \"parameters\": {\"q\": \"49.597, -8.",
+      "-"
+     ],
+     [
+      "MISSING_PARAMETER",
+      "failure",
+      "SCHEMA_VALID_PLACEHOLDER_VALUE",
+      "{\"function\": \"Mobile-Phones.Get Devices Details\", \"parameters\": {}}",
+      "{\"function\": \"Mobile-Phones.Get Devices Details\", \"parameters\": {\"device_id\": 0.",
+      "inserted 'device_id' = number placeholder"
+     ],
+     [
+      "WRONG_FORMAT",
+      "success",
+      "OK_CORRECTED_EXACT",
+      "{\"function_name\": \"compare_prices\", \"function_params\": {\"medication1\": \"Aspirin\"",
+      "{\"function\": \"compare_prices\", \"parameters\": {\"medication1\": \"Aspirin\", \"medicat",
+      "restructured envelope to {function, parameters}"
+     ],
+     [
+      "WRONG_FORMAT",
+      "failure",
+      "SCHEMA_VALID_NOT_EXACT",
+      "{\"type\": \"function\", \"function\": {\"name\": \"api.video.GET_analytics-videos-videoI",
+      "{\"function\": \"api.video.GET_analytics-videos-videoId\", \"parameters\": {\"videoId\":",
+      "restructured envelope to {function, parameters}; cast 'metad"
+     ]
+    ],
+    "caption": "Examples of successful and failed corrections (synthetic test calls)"
+   },
+   "correction_examples_real": {
+    "header": [
+     "case",
+     "model",
+     "request",
+     "model output",
+     "system output",
+     "gold call"
+    ],
+    "rows": [
+     [
+      "corrected (wrong -> exact)",
+      "Qwen2.5-0.5B-Instruct",
+      "Get the upcoming public holidays worldwide for the next 7 days.",
+      "{\"name\": \"PublicHolidayNextPublicHolidaysWorldwide\"}",
+      "{\"function\": \"PublicHolidayNextPublicHolidaysWorldwide\", \"parameters\":",
+      "{\"function\": \"PublicHolidayNextPublicHolidaysWorldwide\", \"parameters\":"
+     ],
+     [
+      "corrected (wrong -> exact)",
+      "TinyLlama-1.1B-Chat-v1.0",
+      "I'm having a party tonight and want to entertain my guests with some C",
+      "Response: Here's an example JSON object for the \"jokes_random_get\" fun",
+      "{\"function\": \"jokes_random_get\", \"parameters\": {}}",
+      "{\"function\": \"jokes_random_get\", \"parameters\": {}}"
+     ],
+     [
+      "flagged, not fixed",
+      "Qwen2.5-3B-Instruct",
+      "I'm planning a road trip across Europe. Can you provide me with inform",
+      "{\"function\": \"CountryAvailableCountries\", \"parameters\": {\"countryCode\"",
+      "{\"function\": \"CountryAvailableCountries\", \"parameters\": {}}",
+      "{\"function\": \"CountryCountryInfo\", \"parameters\": {\"countryCode\": \"IT\"}"
+     ],
+     [
+      "flagged, not fixed",
+      "TinyLlama-1.1B-Chat-v1.0",
+      "I am curious about how the Chinese New Year is celebrated. Could you f",
+      "Response: Sure, I'd be happy to provide you with the detailed informat",
+      "null",
+      "{\"function\": \"getHolidayDetails\", \"parameters\": {\"holidayId\": \"chinese"
+     ],
+     [
+      "missed (semantic error)",
+      "Qwen2.5-3B-Instruct",
+      "I'm planning a trip to Japan next month. Could you find out how much 1",
+      "{\"function\": \"convert_get\", \"parameters\": {\"api_key\": \"mySecretApiKey\"",
+      "{\"function\": \"convert_get\", \"parameters\": {\"api_key\": \"mySecretApiKey\"",
+      "{\"function\": \"convert_get\", \"parameters\": {\"api_key\": \"8BbG6gN9g3Y29h5"
+     ],
+     [
+      "missed (semantic error)",
+      "Qwen2.5-0.5B-Instruct",
+      "I just finished watching \"My Hero Academia,\" and I absolutely loved it",
+      "{   \"function\": \"getRecommendations\",   \"parameters\": {     \"animeId\":",
+      "{\"function\": \"getRecommendations\", \"parameters\": {\"animeId\": 123456}}",
+      "{\"function\": \"searchAnime\", \"parameters\": {\"query\": \"Your Lie in April"
+     ],
+     [
+      "correct, left untouched",
+      "Phi-3.5-mini-instruct",
+      "I need the last update date and name of the airport with the ICAO code",
+      "{\"function\": \"AirportApi_getAirport\", \"parameters\": {\"icao_code\": \"EDD",
+      "{\"function\": \"AirportApi_getAirport\", \"parameters\": {\"icao_code\": \"EDD",
+      "{\"function\": \"AirportApi_getAirport\", \"parameters\": {\"icao_code\": \"EDD"
+     ],
+     [
+      "correct, left untouched",
+      "Phi-3.5-mini-instruct",
+      "I'm planning to make a fruit salad, and I want to include fruits from ",
+      "{\"function\": \"getFruitsByOrder\", \"parameters\": {\"order\": \"Sapindales\"}",
+      "{\"function\": \"getFruitsByOrder\", \"parameters\": {\"order\": \"Sapindales\"}",
+      "{\"function\": \"getFruitsByOrder\", \"parameters\": {\"order\": \"Sapindales\"}"
+     ]
+    ],
+    "caption": "Examples of successful and failed corrections on real LLM calls"
+   },
+   "runtime": {
+    "header": [
+     "component",
+     "mean ms",
+     "p50 ms",
+     "p95 ms",
+     "p99 ms"
+    ],
+    "rows": [
+     [
+      "random: validate",
+      0.018938540814089293,
+      0.016009499972824415,
+      0.03829989993846539,
+      0.06136958005185994
+     ],
+     [
+      "random: correct",
+      2.7569217260210097,
+      0.03566750001482433,
+      24.46220424993157,
+      28.854226820043344
+     ],
+     [
+      "random: total",
+      2.776091358672096,
+      0.045474499984266004,
+      24.47732944995664,
+      28.869984070076974
+     ],
+     [
+      "function_disjoint: validate",
+      0.021863368093261643,
+      0.016340000001946464,
+      0.03796980001879998,
+      0.06358927997098357
+     ],
+     [
+      "function_disjoint: correct",
+      4.084862610738509,
+      0.03918499999144842,
+      34.89159999994614,
+      59.259921280045
+     ],
+     [
+      "function_disjoint: total",
+      4.106955508518578,
+      0.04900299995824753,
+      34.907151799939,
+      59.70608867995903
+     ],
+     [
+      "function matcher (per WRONG_FUNCTION call)",
+      25.68470448095468,
+      24.73752200000945,
+      31.280800950014502,
+      50.3304062400309
+     ]
+    ],
+    "caption": "Latency per call (Intel(R) Xeon(R) CPU @ 2.20GHz)"
+   },
+   "human_agreement": {
+    "header": [
+     "question",
+     "Cohen κ"
+    ],
+    "rows": [
+     [
+      "call is wrong",
+      0.6976647206005004
+     ],
+     [
+      "corrected call valid",
+      0.7043086454519853
+     ],
+     [
+      "corrected call satisfies intent",
+      0.5171164956454255
+     ],
+     [
+      "error type WRONG_FUNCTION",
+      0.6225795864785034
+     ],
+     [
+      "error type EXTRA_PARAMETER",
+      0.6621621621621622
+     ],
+     [
+      "error type WRONG_TYPE",
+      0.3593850096092248
+     ],
+     [
+      "error type WRONG_VALUE",
+      0.6540880503144654
+     ],
+     [
+      "error type MISSING_PARAMETER",
+      0.8559077809798269
+     ],
+     [
+      "error type WRONG_FORMAT",
+      0.5353159851301114
+     ],
+     [
+      "error type OTHER",
+      0.0
+     ]
+    ],
+    "caption": "Inter-rater agreement"
+   }
+  },
+  "human": {
+   "status": "computed from completed sheets",
+   "n_items_both_raters": 200,
+   "kappa_call_is_wrong": 0.6976647206005004,
+   "agreement_call_is_wrong": 0.855,
+   "kappa_error_type": {
+    "WRONG_FUNCTION": {
+     "kappa": 0.6225795864785034,
+     "rater1_count": 38,
+     "rater2_count": 37
+    },
+    "EXTRA_PARAMETER": {
+     "kappa": 0.6621621621621622,
+     "rater1_count": 31,
+     "rater2_count": 28
+    },
+    "WRONG_TYPE": {
+     "kappa": 0.3593850096092248,
+     "rater1_count": 3,
+     "rater2_count": 13
+    },
+    "WRONG_VALUE": {
+     "kappa": 0.6540880503144654,
+     "rater1_count": 48,
+     "rater2_count": 30
+    },
+    "MISSING_PARAMETER": {
+     "kappa": 0.8559077809798269,
+     "rater1_count": 14,
+     "rater2_count": 16
+    },
+    "WRONG_FORMAT": {
+     "kappa": 0.5353159851301114,
+     "rater1_count": 23,
+     "rater2_count": 40
+    },
+    "OTHER": {
+     "kappa": 0.0,
+     "rater1_count": 29,
+     "rater2_count": 0
+    }
+   },
+   "kappa_corrected_valid": 0.7043086454519853,
+   "kappa_intent": 0.5171164956454255,
+   "weighted_kappa_intent": 0.6028953453302504,
+   "n_disagreements": 92,
+   "n_with_human_gold": 200,
+   "n_disagreements_unresolved": 0,
+   "system_detection_vs_human": {
+    "n": 200,
+    "tp": 86,
+    "tn": 65,
+    "fp": 1,
+    "fn": 48,
+    "accuracy": 0.755,
+    "precision": 0.9885057471264368,
+    "recall": 0.6417910447761194,
+    "f1": 0.7782805429864253,
+    "balanced_accuracy": 0.8133197648123021,
+    "fpr": 0.015151515151515152,
+    "fnr": 0.3582089552238806,
+    "specificity": 0.9848484848484849
+   },
+   "selfcheck_vs_human": {
+    "n": 110,
+    "selfcheck": {
+     "n": 110,
+     "tp": 50,
+     "tn": 29,
+     "fp": 18,
+     "fn": 13,
+     "accuracy": 0.7181818181818181,
+     "precision": 0.7352941176470589,
+     "recall": 0.7936507936507936,
+     "f1": 0.7633587786259542,
+     "balanced_accuracy": 0.7053360351232691,
+     "fpr": 0.3829787234042553,
+     "fnr": 0.20634920634920634,
+     "specificity": 0.6170212765957447
+    },
+    "schema_only_same_items": {
+     "n": 110,
+     "tp": 42,
+     "tn": 47,
+     "fp": 0,
+     "fn": 21,
+     "accuracy": 0.8090909090909091,
+     "precision": 1.0,
+     "recall": 0.6666666666666666,
+     "f1": 0.8,
+     "balanced_accuracy": 0.8333333333333333,
+     "fpr": 0.0,
+     "fnr": 0.3333333333333333,
+     "specificity": 1.0
+    },
+    "union_same_items": {
+     "n": 110,
+     "tp": 59,
+     "tn": 29,
+     "fp": 18,
+     "fn": 4,
+     "accuracy": 0.8,
+     "precision": 0.7662337662337663,
+     "recall": 0.9365079365079365,
+     "f1": 0.842857142857143,
+     "balanced_accuracy": 0.7767646065518405,
+     "fpr": 0.3829787234042553,
+     "fnr": 0.06349206349206349,
+     "specificity": 0.6170212765957447
+    }
+   },
+   "auto_labels_vs_human_kappa": 0.6112730806608356,
+   "auto_labels_vs_human_agreement": 0.84,
+   "corrected_intent_yes_both_raters": 0.445
+  }
+ }
+}

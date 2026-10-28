@@ -1,0 +1,20 @@
+\begin{table}[t]
+\centering
+\caption{Published baseline: SelfCheckGPT-style sampling consistency (3 samples) vs schema-only on real LLM calls}
+\label{tab:selfcheck_baseline}
+\begin{tabular}{lrrrrrr}
+\hline
+model & method & bal. acc & precision & recall & F1 & FPR \\
+\hline
+Qwen2.5-1.5B-Instruct & SelfCheckGPT-style & 0.777 & 0.787 & 0.800 & 0.793 & 0.245 \\
+Qwen2.5-1.5B-Instruct & schema-only (ours) & 0.567 & 1.000 & 0.133 & 0.235 & 0.000 \\
+Qwen2.5-1.5B-Instruct & ours OR SelfCheck & 0.794 & 0.794 & 0.833 & 0.813 & 0.245 \\
+Qwen2.5-3B-Instruct & SelfCheckGPT-style & 0.860 & 0.920 & 0.793 & 0.852 & 0.073 \\
+Qwen2.5-3B-Instruct & schema-only (ours) & 0.569 & 1.000 & 0.138 & 0.242 & 0.000 \\
+Qwen2.5-3B-Instruct & ours OR SelfCheck & 0.869 & 0.922 & 0.810 & 0.862 & 0.073 \\
+Phi-3.5-mini-instruct & SelfCheckGPT-style & 0.795 & 0.902 & 0.697 & 0.786 & 0.106 \\
+Phi-3.5-mini-instruct & schema-only (ours) & 0.598 & 1.000 & 0.197 & 0.329 & 0.000 \\
+Phi-3.5-mini-instruct & ours OR SelfCheck & 0.826 & 0.909 & 0.758 & 0.826 & 0.106 \\
+\hline
+\end{tabular}
+\end{table}

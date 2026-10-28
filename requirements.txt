@@ -1,0 +1,17 @@
+# Core (CPU): Code_1, Code_3, Code_6
+numpy
+scipy
+scikit-learn
+pandas
+pyarrow
+matplotlib
+jsonschema
+rapidfuzz
+datasets
+sentence-transformers
+# Neural baselines and LLM generation (GPU): Code_2, Code_4, Code_5, Code_5b
+torch
+transformers
+accelerate
+bert-score
+ddgs

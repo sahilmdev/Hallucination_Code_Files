@@ -1,0 +1,21 @@
+\begin{table}[t]
+\centering
+\caption{One example per error type (before / after injection)}
+\label{tab:examples_by_type}
+\begin{tabular}{lrr}
+\hline
+label & reference call & generated call \\
+\hline
+NONE & {"function": "ExplorArc's Password Generation API.Password Generation", "parameters": {"le & {"function": "ExplorArc's Password Generation API.Password Generation", "parameters": {"le \\
+WRONG\_TYPE & {"function": "Football Highlight.Elhighlights", "parameters": {"url": "https://acrtadeon.e & {"function": "Football Highlight.Elhighlights", "parameters": {"url": ["https://acrtadeon. \\
+MISSING\_PARAMETER & {"function": "Cancel\_Appointment", "parameters": {"appointment\_id": "123456"}} & {"function": "Cancel\_Appointment", "parameters": {}} \\
+WRONG\_VALUE & {"function": "Words of Wisdom - The Famous Quotes API./quotes", "parameters": {"author": " & {"function": "Words of Wisdom - The Famous Quotes API./quotes", "parameters": {"author": " \\
+EXTRA\_PARAMETER & {"function": "Vuelos.Aeropuerto", "parameters": {"where": ""}} & {"function": "Vuelos.Aeropuerto", "parameters": {"where": "", "include\_metadata": 1}} \\
+WRONG\_FUNCTION & {"function": "TokopediaApi.Search Product", "parameters": {"query": "Celana Jeans", "act": & {"function": "TokopediaApi.NonExistent", "parameters": {"query": "Celana Jeans", "act": "s \\
+WRONG\_FORMAT & {"function": "dimondevosint.Photo from given number", "parameters": {"phone": "+7999999999 & {"tool": "dimondevosint.Photo from given number", "tool\_input": {"phone": "+79999999999"}} \\
+MULTI\_2 & {"function": "Amazon Data Scraper \_v2.Get Amazon Search results", "parameters": {"searchQu & {"function": "Amazon Data Scraper \_v2.Get Amazon Search results\_new", "parameters": {}} \\
+MULTI\_3 & {"function": "Domain Checker.DNS", "parameters": {"domain": "rapidapi.com"}} & {"function\_name": "Domain Checker.NonExistent", "function\_params": {}} \\
+MULTI\_4 & {"function": "URL Analysis.url-analysis", "parameters": {"url": "cleverbikes.myshopify.com & {"type": "function", "function": {"name": "URL Analysis.NonExistent", "arguments": "{\"inc \\
+\hline
+\end{tabular}
+\end{table}

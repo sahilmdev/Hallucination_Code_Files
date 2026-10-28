@@ -1,0 +1,275 @@
+{
+ "_meta": {
+  "notebook": "Code_1",
+  "kind": "data",
+  "data_version": "data_v2",
+  "run_id": null,
+  "config_hash": "d1a9e5276230",
+  "core_version": "2.0.0",
+  "created_utc": "2026-10-16T06:14:32Z"
+ },
+ "data": {
+  "NONE": {
+   "id": "S00000",
+   "query": "I want to enhance the security of my company's online accounts. Can you generate ten unique passwords, each with a different length?",
+   "reference_call": {
+    "function": "ExplorArc's Password Generation API.Password Generation",
+    "parameters": {
+     "length": 10
+    }
+   },
+   "generated_call": {
+    "function": "ExplorArc's Password Generation API.Password Generation",
+    "parameters": {
+     "length": 10
+    }
+   },
+   "injection": []
+  },
+  "WRONG_TYPE": {
+   "id": "S01000",
+   "query": "My friends and I are looking for the best live football highlights. Can you provide us with the highlights from multiple sources, such as Elhighlights, Ok.RU, and YouTube? Please embed the highlights from the URLs 'https://acrtadeon.elhighlights.com/embed/0nvR19fByJZmp', 'https://ok.ru/videoembed/56",
+   "reference_call": {
+    "function": "Football Highlight.Elhighlights",
+    "parameters": {
+     "url": "https://acrtadeon.elhighlights.com/embed/0nvR19fByJZmp"
+    }
+   },
+   "generated_call": {
+    "function": "Football Highlight.Elhighlights",
+    "parameters": {
+     "url": [
+      "https://acrtadeon.elhighlights.com/embed/0nvR19fByJZmp"
+     ]
+    }
+   },
+   "injection": [
+    {
+     "op": "WRONG_TYPE",
+     "param": "url",
+     "original_value": "https://acrtadeon.elhighlights.com/embed/0nvR19fByJZmp",
+     "original_type": "string",
+     "corrupted_value": [
+      "https://acrtadeon.elhighlights.com/embed/0nvR19fByJZmp"
+     ],
+     "corrupted_type": "array",
+     "declared_type": "string"
+    }
+   ]
+  },
+  "MISSING_PARAMETER": {
+   "id": "S01300",
+   "query": "User: I'd like to schedule a telehealth psychiatry consultation with Dr. Zhang on October 1st at 4 PM. My name is Li and my phone number is 123456789.\nAPI-Request: [ToolSearcher(keywords='schedule a consultation appointment')]->\"API: Schedule Appointment | Description: Schedule a consultation appoin",
+   "reference_call": {
+    "function": "Cancel_Appointment",
+    "parameters": {
+     "appointment_id": "123456"
+    }
+   },
+   "generated_call": {
+    "function": "Cancel_Appointment",
+    "parameters": {}
+   },
+   "injection": [
+    {
+     "op": "MISSING_PARAMETER",
+     "param": "appointment_id",
+     "removed_value": "123456"
+    }
+   ]
+  },
+  "WRONG_VALUE": {
+   "id": "S01600",
+   "query": "I'm feeling down today and could use some inspiration. Can you provide me with a motivational quote from one of history's great thinkers? It would be great if the quote is from Albert Einstein or Maya Angelou.",
+   "reference_call": {
+    "function": "Words of Wisdom - The Famous Quotes API./quotes",
+    "parameters": {
+     "author": "[]",
+     "category": "[]"
+    }
+   },
+   "generated_call": {
+    "function": "Words of Wisdom - The Famous Quotes API./quotes",
+    "parameters": {
+     "author": "Wang Xia",
+     "category": "[]"
+    }
+   },
+   "injection": [
+    {
+     "op": "WRONG_VALUE",
+     "param": "author",
+     "original": "[]",
+     "corrupted": "Wang Xia",
+     "method": "donor_swap",
+     "gt_value_grounded": null
+    }
+   ]
+  },
+  "EXTRA_PARAMETER": {
+   "id": "S01900",
+   "query": "I'm organizing a group trip for my colleagues to Tokyo. Can you assist me in finding the nearest airport to our conference venue? Also, provide me with a list of available flights from our location to Tokyo.",
+   "reference_call": {
+    "function": "Vuelos.Aeropuerto",
+    "parameters": {
+     "where": ""
+    }
+   },
+   "generated_call": {
+    "function": "Vuelos.Aeropuerto",
+    "parameters": {
+     "where": "",
+     "include_metadata": 1
+    }
+   },
+   "injection": [
+    {
+     "op": "EXTRA_PARAMETER",
+     "param": "include_metadata",
+     "value": 1
+    }
+   ]
+  },
+  "WRONG_FUNCTION": {
+   "id": "S02200",
+   "query": "My family and I are planning a vacation and we need to buy some travel essentials. Can you help us search for travel accessories on Tokopedia? We want to see the titles, prices, images, and ratings of the available options. Additionally, provide us with the product details, including the description",
+   "reference_call": {
+    "function": "TokopediaApi.Search Product",
+    "parameters": {
+     "query": "Celana Jeans",
+     "act": "search"
+    }
+   },
+   "generated_call": {
+    "function": "TokopediaApi.NonExistent",
+    "parameters": {
+     "query": "Celana Jeans",
+     "act": "search"
+    }
+   },
+   "injection": [
+    {
+     "op": "WRONG_FUNCTION",
+     "original": "TokopediaApi.Search Product",
+     "corrupted": "TokopediaApi.NonExistent"
+    }
+   ]
+  },
+  "WRONG_FORMAT": {
+   "id": "S02500",
+   "query": "I suspect someone is using a fake phone number. Can you retrieve the photo associated with the phone number +918888888888? Furthermore, I need any public information available for this number.",
+   "reference_call": {
+    "function": "dimondevosint.Photo from given number",
+    "parameters": {
+     "phone": "+79999999999"
+    }
+   },
+   "generated_call": {
+    "tool": "dimondevosint.Photo from given number",
+    "tool_input": {
+     "phone": "+79999999999"
+    }
+   },
+   "injection": [
+    {
+     "op": "WRONG_FORMAT",
+     "envelope": "tool/tool_input"
+    }
+   ]
+  },
+  "MULTI_2": {
+   "id": "M2_0000",
+   "query": "My friends and I are planning to buy new tablets. Can you show us the search results for tablets on Amazon? Additionally, we would like to see the product details and offers for the tablet with ID 'B00K3OM3PS'.",
+   "reference_call": {
+    "function": "Amazon Data Scraper _v2.Get Amazon Search results",
+    "parameters": {
+     "searchQuery": "mac"
+    }
+   },
+   "generated_call": {
+    "function": "Amazon Data Scraper _v2.Get Amazon Search results_new",
+    "parameters": {}
+   },
+   "injection": [
+    {
+     "op": "MISSING_PARAMETER",
+     "param": "searchQuery",
+     "removed_value": "mac"
+    },
+    {
+     "op": "WRONG_FUNCTION",
+     "original": "Amazon Data Scraper _v2.Get Amazon Search results",
+     "corrupted": "Amazon Data Scraper _v2.Get Amazon Search results_new"
+    }
+   ]
+  },
+  "MULTI_3": {
+   "id": "M3_0000",
+   "query": "I am planning to register a new domain for my company. Can you help me find available domain names related to 'tech' and 'innovation'? Please provide the DNS records and Whois details for each available domain.",
+   "reference_call": {
+    "function": "Domain Checker.DNS",
+    "parameters": {
+     "domain": "rapidapi.com"
+    }
+   },
+   "generated_call": {
+    "function_name": "Domain Checker.NonExistent",
+    "function_params": {}
+   },
+   "injection": [
+    {
+     "op": "MISSING_PARAMETER",
+     "param": "domain",
+     "removed_value": "rapidapi.com"
+    },
+    {
+     "op": "WRONG_FUNCTION",
+     "original": "Domain Checker.DNS",
+     "corrupted": "Domain Checker.NonExistent"
+    },
+    {
+     "op": "WRONG_FORMAT",
+     "envelope": "function_name/function_params"
+    }
+   ]
+  },
+  "MULTI_4": {
+   "id": "M4_0000",
+   "query": "I need to analyze a web page belonging to my friend's blog, 'Tech Talk'. Can you check the platform, language, and opengraph usage of the website?",
+   "reference_call": {
+    "function": "URL Analysis.url-analysis",
+    "parameters": {
+     "url": "cleverbikes.myshopify.com"
+    }
+   },
+   "generated_call": {
+    "type": "function",
+    "function": {
+     "name": "URL Analysis.NonExistent",
+     "arguments": "{\"include_metadata\": \"all\"}"
+    }
+   },
+   "injection": [
+    {
+     "op": "MISSING_PARAMETER",
+     "param": "url",
+     "removed_value": "cleverbikes.myshopify.com"
+    },
+    {
+     "op": "EXTRA_PARAMETER",
+     "param": "include_metadata",
+     "value": "all"
+    },
+    {
+     "op": "WRONG_FUNCTION",
+     "original": "URL Analysis.url-analysis",
+     "corrupted": "URL Analysis.NonExistent"
+    },
+    {
+     "op": "WRONG_FORMAT",
+     "envelope": "openai_nested"
+    }
+   ]
+  }
+ }
+}

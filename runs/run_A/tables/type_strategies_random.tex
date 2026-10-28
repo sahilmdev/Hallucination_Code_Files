@@ -1,0 +1,24 @@
+\begin{table}[t]
+\centering
+\caption{Type-checking strategies (random)}
+\label{tab:type_strategies_random}
+\begin{tabular}{lrrrr}
+\hline
+strategy & FPR & WRONG\_TYPE recall & det. F1 & exact \\
+\hline
+off & 0.000 & 0.000 & 0.800 & 0.672 \\
+strict & 0.043 & 1.000 & 0.903 & 0.762 \\
+skiplist & 0.040 & 1.000 & 0.903 & 0.763 \\
+adaptive tau=0.0 & 0.043 & 1.000 & 0.903 & 0.762 \\
+adaptive tau=0.2 & 0.033 & 1.000 & 0.904 & 0.766 \\
+adaptive tau=0.4 & 0.033 & 1.000 & 0.904 & 0.766 \\
+adaptive tau=0.5 & 0.033 & 1.000 & 0.904 & 0.766 \\
+adaptive tau=0.6 & 0.033 & 1.000 & 0.904 & 0.766 \\
+adaptive tau=0.7 & 0.027 & 0.986 & 0.904 & 0.767 \\
+adaptive tau=0.8 & 0.017 & 0.810 & 0.887 & 0.753 \\
+adaptive tau=0.9 & 0.014 & 0.757 & 0.882 & 0.747 \\
+adaptive tau=0.95 & 0.014 & 0.662 & 0.872 & 0.737 \\
+adaptive tau=1.0 & 0.013 & 0.219 & 0.823 & 0.690 \\
+\hline
+\end{tabular}
+\end{table}

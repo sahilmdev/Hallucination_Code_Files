@@ -1,0 +1,15 @@
+\begin{table}[t]
+\centering
+\caption{Calls with several simultaneous errors}
+\label{tab:multi_error}
+\begin{tabular}{lrrrrr}
+\hline
+errors per call & n & detected & schema-valid & exact & set acc (trace) \\
+\hline
+1 & 300 & 0.857 & 0.977 & 0.717 & 0.847 \\
+2 & 300 & 1.000 & 0.630 & 0.307 & 0.527 \\
+3 & 300 & 1.000 & 0.187 & 0.000 & 0.183 \\
+4 & 300 & 1.000 & 0.000 & 0.000 & 0.037 \\
+\hline
+\end{tabular}
+\end{table}

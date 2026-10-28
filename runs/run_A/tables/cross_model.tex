@@ -1,0 +1,41 @@
+\begin{table}[t]
+\centering
+\caption{Real LLM tool calls: raw vs after the schema-only pipeline, known vs unseen tools}
+\label{tab:cross_model}
+\begin{tabular}{lrrrrrrrrrr}
+\hline
+model & decoding & tools & n & parse & raw exact & det. F1 & type F1 & final schema-valid & final exact & final lenient \\
+\hline
+Qwen2.5-0.5B-Instruct & free & all & 162 & 0.994 & 0.278 & 0.430 & 0.389 & 0.932 & 0.327 & 0.333 \\
+Qwen2.5-0.5B-Instruct & free & known & 44 & 1.000 & 0.227 & 0.419 & 0.483 & 0.932 & 0.250 & 0.250 \\
+Qwen2.5-0.5B-Instruct & free & unseen & 118 & 0.992 & 0.297 & 0.434 & 0.492 & 0.932 & 0.356 & 0.364 \\
+Qwen2.5-0.5B-Instruct & constrained & all & 162 & 1.000 & 0.154 & 0.329 & 0.157 & 0.963 & 0.160 & 0.160 \\
+Qwen2.5-0.5B-Instruct & constrained & known & 44 & 1.000 & 0.114 & 0.143 & 0.071 & 1.000 & 0.114 & 0.114 \\
+Qwen2.5-0.5B-Instruct & constrained & unseen & 118 & 1.000 & 0.169 & 0.393 & 0.284 & 0.949 & 0.178 & 0.178 \\
+Qwen2.5-1.5B-Instruct & free & all & 162 & 0.994 & 0.481 & 0.250 & 0.342 & 0.988 & 0.481 & 0.494 \\
+Qwen2.5-1.5B-Instruct & free & known & 44 & 1.000 & 0.409 & 0.207 & 0.150 & 0.977 & 0.409 & 0.432 \\
+Qwen2.5-1.5B-Instruct & free & unseen & 118 & 0.992 & 0.508 & 0.269 & 0.337 & 0.992 & 0.508 & 0.517 \\
+Qwen2.5-1.5B-Instruct & constrained & all & 162 & 1.000 & 0.296 & 0.428 & 0.106 & 0.981 & 0.296 & 0.296 \\
+Qwen2.5-1.5B-Instruct & constrained & known & 44 & 1.000 & 0.295 & 0.368 & 0.156 & 1.000 & 0.295 & 0.295 \\
+Qwen2.5-1.5B-Instruct & constrained & unseen & 118 & 1.000 & 0.297 & 0.449 & 0.133 & 0.975 & 0.297 & 0.297 \\
+Qwen2.5-3B-Instruct & free & all & 162 & 0.994 & 0.488 & 0.289 & 0.363 & 0.969 & 0.500 & 0.512 \\
+Qwen2.5-3B-Instruct & free & known & 44 & 1.000 & 0.477 & 0.231 & 0.360 & 0.977 & 0.500 & 0.500 \\
+Qwen2.5-3B-Instruct & free & unseen & 118 & 0.992 & 0.492 & 0.310 & 0.363 & 0.966 & 0.500 & 0.517 \\
+Qwen2.5-3B-Instruct & constrained & all & 162 & 1.000 & 0.370 & 0.394 & 0.108 & 0.981 & 0.370 & 0.377 \\
+Qwen2.5-3B-Instruct & constrained & known & 44 & 1.000 & 0.295 & 0.324 & 0.100 & 1.000 & 0.295 & 0.295 \\
+Qwen2.5-3B-Instruct & constrained & unseen & 118 & 1.000 & 0.398 & 0.422 & 0.151 & 0.975 & 0.398 & 0.407 \\
+TinyLlama-1.1B-Chat-v1.0 & free & all & 162 & 0.957 & 0.093 & 0.824 & 0.518 & 0.698 & 0.235 & 0.235 \\
+TinyLlama-1.1B-Chat-v1.0 & free & known & 44 & 0.955 & 0.114 & 0.836 & 0.628 & 0.682 & 0.273 & 0.273 \\
+TinyLlama-1.1B-Chat-v1.0 & free & unseen & 118 & 0.958 & 0.085 & 0.820 & 0.521 & 0.703 & 0.220 & 0.220 \\
+TinyLlama-1.1B-Chat-v1.0 & constrained & all & 162 & 1.000 & 0.173 & 0.325 & 0.190 & 1.000 & 0.185 & 0.191 \\
+TinyLlama-1.1B-Chat-v1.0 & constrained & known & 44 & 1.000 & 0.159 & 0.318 & 0.179 & 1.000 & 0.159 & 0.159 \\
+TinyLlama-1.1B-Chat-v1.0 & constrained & unseen & 118 & 1.000 & 0.178 & 0.328 & 0.294 & 1.000 & 0.195 & 0.203 \\
+Phi-3.5-mini-instruct & free & all & 162 & 1.000 & 0.444 & 0.333 & 0.248 & 0.920 & 0.457 & 0.469 \\
+Phi-3.5-mini-instruct & free & known & 44 & 1.000 & 0.341 & 0.474 & 0.200 & 0.841 & 0.364 & 0.364 \\
+Phi-3.5-mini-instruct & free & unseen & 118 & 1.000 & 0.483 & 0.257 & 0.240 & 0.949 & 0.492 & 0.508 \\
+Phi-3.5-mini-instruct & constrained & all & 162 & 1.000 & 0.346 & 0.107 & 0.067 & 1.000 & 0.346 & 0.346 \\
+Phi-3.5-mini-instruct & constrained & known & 44 & 1.000 & 0.295 & 0.000 & 0.000 & 1.000 & 0.295 & 0.295 \\
+Phi-3.5-mini-instruct & constrained & unseen & 118 & 1.000 & 0.364 & 0.148 & 0.138 & 1.000 & 0.364 & 0.364 \\
+\hline
+\end{tabular}
+\end{table}

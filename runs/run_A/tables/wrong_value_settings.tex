@@ -1,0 +1,19 @@
+\begin{table}[t]
+\centering
+\caption{WRONG_VALUE: schema only vs schema + query vs + retrieval}
+\label{tab:wrong_value_settings}
+\begin{tabular}{lrrrr}
+\hline
+setting & WV detected & WV exact & clean FPR & all exact \\
+\hline
+random: 1 schema only & 0.043 & 0.000 & 0.033 & 0.766 \\
+random: 2 schema + query & 0.852 & 0.067 & 0.579 & 0.529 \\
+function\_disjoint: 1 schema only & 0.039 & 0.000 & 0.016 & 0.775 \\
+function\_disjoint: 2 schema + query & 0.835 & 0.068 & 0.566 & 0.537 \\
+random: schema only + retrieval (schema\_names) &  & 0.000 &  & 0.766 \\
+random: schema only + retrieval (user\_query) &  & 0.000 &  & 0.766 \\
+random: schema + query + retrieval (schema\_names) &  & 0.067 &  & 0.504 \\
+random: schema + query + retrieval (user\_query) &  & 0.067 &  & 0.486 \\
+\hline
+\end{tabular}
+\end{table}

@@ -1,0 +1,346 @@
+{
+ "_meta": {
+  "notebook": "Code_1",
+  "kind": "data",
+  "data_version": "data_v2",
+  "run_id": null,
+  "config_hash": "d1a9e5276230",
+  "core_version": "2.0.0",
+  "created_utc": "2026-10-16T06:14:32Z"
+ },
+ "data": {
+  "registry": {
+   "functions_by_source": {
+    "toolbench": 3286,
+    "apibank": 1768,
+    "toolalpaca_eval": 101
+   },
+   "declarations": 9774,
+   "canonical_type_known": 9772,
+   "required_true": 6245,
+   "required_false": 3493,
+   "required_unknown": 36,
+   "with_enum": 10,
+   "raw_types": {
+    "STRING": 3769,
+    "string": 3565,
+    "NUMBER": 1172,
+    "integer": 591,
+    "number": 183,
+    "BOOLEAN": 145,
+    "ENUM": 140,
+    "list": 89,
+    "object": 38,
+    "DATE (YYYY-MM-DD)": 28,
+    "ARRAY": 18,
+    "OBJECT": 12,
+    "boolean": 8,
+    "array": 8,
+    "TIME (24-hour HH:MM)": 3,
+    "GEOPOINT (latitude, longitude)": 2,
+    "None": 1,
+    "none": 1,
+    "str": 1
+   },
+   "canonical_types": {
+    "string": 7508,
+    "number": 1355,
+    "boolean": 153,
+    "array": 115,
+    "object": 50,
+    "None": 2,
+    "integer": 591
+   }
+  },
+  "toolbench": {
+   "parsed": 88895
+  },
+  "apibank": {
+   "parsed": 9469,
+   "not_an_api_call": 5994
+  },
+  "reference_value_casting": {
+   "kept": 144512,
+   "cast": 23431
+  },
+  "cast_reference_values": true,
+  "pool": {
+   "no_parameters": 23224,
+   "reference_inconsistent_with_schema/toolbench": 37,
+   "reference_inconsistent_with_schema/apibank": 1467,
+   "function_not_in_registry": 6,
+   "over_function_cap": 62775,
+   "duplicate": 188,
+   "kept": 10667,
+   "distinct_functions": 3819
+  },
+  "pool_by_source": {
+   "toolbench": 7065,
+   "apibank": 3602
+  },
+  "single": {
+   "n": 2800,
+   "by_label": {
+    "NONE": 1000,
+    "WRONG_TYPE": 300,
+    "MISSING_PARAMETER": 300,
+    "WRONG_VALUE": 300,
+    "EXTRA_PARAMETER": 300,
+    "WRONG_FUNCTION": 300,
+    "WRONG_FORMAT": 300
+   },
+   "by_source": {
+    "toolbench": 2589,
+    "apibank": 211
+   },
+   "injection": {
+    "WRONG_TYPE": {
+     "made": 300,
+     "tried": 359,
+     "skipped_reasons": {
+      "no type-consistent parameter": 59
+     }
+    },
+    "MISSING_PARAMETER": {
+     "made": 300,
+     "tried": 466,
+     "skipped_reasons": {
+      "no required parameter present": 166
+     }
+    },
+    "WRONG_VALUE": {
+     "made": 300,
+     "tried": 484,
+     "skipped_reasons": {
+      "no value to change": 184
+     }
+    },
+    "EXTRA_PARAMETER": {
+     "made": 300,
+     "tried": 300,
+     "skipped_reasons": {}
+    },
+    "WRONG_FUNCTION": {
+     "made": 300,
+     "tried": 300,
+     "skipped_reasons": {}
+    },
+    "WRONG_FORMAT": {
+     "made": 300,
+     "tried": 300,
+     "skipped_reasons": {}
+    }
+   },
+   "avg_params_by_label": {
+    "NONE": 2.59,
+    "WRONG_FUNCTION": 2.39,
+    "EXTRA_PARAMETER": 2.04,
+    "WRONG_TYPE": 3.05,
+    "WRONG_VALUE": 2.7,
+    "MISSING_PARAMETER": 2.2,
+    "WRONG_FORMAT": 2.32
+   }
+  },
+  "multi": {
+   "n": 1200,
+   "by_k": {
+    "1": {
+     "made": 300,
+     "tried": 300,
+     "type_counts": {
+      "WRONG_TYPE": 32,
+      "WRONG_FORMAT": 63,
+      "WRONG_FUNCTION": 52,
+      "WRONG_VALUE": 41,
+      "EXTRA_PARAMETER": 73,
+      "MISSING_PARAMETER": 39
+     }
+    },
+    "2": {
+     "made": 300,
+     "tried": 300,
+     "type_counts": {
+      "WRONG_FUNCTION": 121,
+      "MISSING_PARAMETER": 71,
+      "WRONG_FORMAT": 135,
+      "WRONG_TYPE": 73,
+      "WRONG_VALUE": 74,
+      "EXTRA_PARAMETER": 126
+     }
+    },
+    "3": {
+     "made": 300,
+     "tried": 300,
+     "type_counts": {
+      "WRONG_FORMAT": 211,
+      "WRONG_FUNCTION": 192,
+      "MISSING_PARAMETER": 104,
+      "EXTRA_PARAMETER": 199,
+      "WRONG_VALUE": 99,
+      "WRONG_TYPE": 95
+     }
+    },
+    "4": {
+     "made": 300,
+     "tried": 350,
+     "type_counts": {
+      "WRONG_FORMAT": 253,
+      "WRONG_FUNCTION": 264,
+      "EXTRA_PARAMETER": 260,
+      "MISSING_PARAMETER": 132,
+      "WRONG_TYPE": 155,
+      "WRONG_VALUE": 136
+     }
+    }
+   }
+  },
+  "splits": {
+   "random": {
+    "n_tune": 840,
+    "n_test": 1960,
+    "tune_by_label": {
+     "EXTRA_PARAMETER": 90,
+     "MISSING_PARAMETER": 90,
+     "NONE": 300,
+     "WRONG_FORMAT": 90,
+     "WRONG_FUNCTION": 90,
+     "WRONG_TYPE": 90,
+     "WRONG_VALUE": 90
+    },
+    "test_by_label": {
+     "EXTRA_PARAMETER": 210,
+     "MISSING_PARAMETER": 210,
+     "NONE": 700,
+     "WRONG_FORMAT": 210,
+     "WRONG_FUNCTION": 210,
+     "WRONG_TYPE": 210,
+     "WRONG_VALUE": 210
+    },
+    "functions_tune": 687,
+    "functions_test": 1206,
+    "functions_in_both": 459,
+    "test_examples_with_function_seen_in_tune": 678
+   },
+   "function_disjoint": {
+    "n_tune": 863,
+    "n_test": 1937,
+    "tune_by_label": {
+     "EXTRA_PARAMETER": 91,
+     "MISSING_PARAMETER": 96,
+     "NONE": 300,
+     "WRONG_FORMAT": 97,
+     "WRONG_FUNCTION": 93,
+     "WRONG_TYPE": 92,
+     "WRONG_VALUE": 94
+    },
+    "test_by_label": {
+     "EXTRA_PARAMETER": 209,
+     "MISSING_PARAMETER": 204,
+     "NONE": 700,
+     "WRONG_FORMAT": 203,
+     "WRONG_FUNCTION": 207,
+     "WRONG_TYPE": 208,
+     "WRONG_VALUE": 206
+    },
+    "functions_tune": 436,
+    "functions_test": 998,
+    "functions_in_both": 0,
+    "test_examples_with_function_seen_in_tune": 0
+   }
+  },
+  "real_eval": {
+   "n_queries": 214,
+   "n_tools": 21,
+   "known_tools": [
+    "AbuseIPDB",
+    "Améthyste",
+    "Apache Superset",
+    "Cataas",
+    "CurrencyBeacon",
+    "Free Dictionary",
+    "Lob.com",
+    "Random Useless Facts",
+    "WolframAlpha",
+    "airportsapi"
+   ],
+   "by_group_role": {
+    "unseen/eval": 118,
+    "known/eval": 44,
+    "known/calibration": 44,
+    "known/excluded_clarification": 8
+   },
+   "gold_function_in_registry": {
+    "true": 206,
+    "false": 8
+   },
+   "multi_step_gold": 63,
+   "gold_call_violations_strict_types": {
+    "WRONG_TYPE": 3,
+    "MISSING_PARAMETER": 12,
+    "EXTRA_PARAMETER": 1
+   }
+  },
+  "taxonomy": {
+   "WRONG_FUNCTION": {
+    "description": "The call names a function that does not exist in the schema registry.",
+    "call_component": "function name",
+    "schema_detectable": "yes (name lookup)",
+    "example": "'Twitter.Search_new' when only 'Twitter.Search' exists"
+   },
+   "EXTRA_PARAMETER": {
+    "description": "The call passes a parameter the function does not declare.",
+    "call_component": "parameter set (surplus)",
+    "schema_detectable": "yes (set difference)",
+    "example": "adds 'verbose': 10 to a function with no 'verbose' parameter"
+   },
+   "MISSING_PARAMETER": {
+    "description": "A parameter the schema marks as required is absent.",
+    "call_component": "parameter set (deficit)",
+    "schema_detectable": "yes, if the registry records which parameters are required",
+    "example": "omits the required 'query' parameter"
+   },
+   "WRONG_TYPE": {
+    "description": "A declared parameter has a value of an incompatible type.",
+    "call_component": "parameter value type",
+    "schema_detectable": "yes, if the declared type is reliable",
+    "example": "'max_length': '4000' (string) where an integer is declared"
+   },
+   "WRONG_VALUE": {
+    "description": "Right parameter and type, but the value does not serve the request.",
+    "call_component": "parameter value content",
+    "schema_detectable": "only for enum/min/max constraints; otherwise needs the query or retrieval",
+    "example": "'city': 'Delhi' when the user asked for Mumbai"
+   },
+   "WRONG_FORMAT": {
+    "description": "Function and arguments are present but in the wrong JSON envelope.",
+    "call_component": "envelope / structure",
+    "schema_detectable": "yes (raw envelope check before normalisation)",
+    "example": "{'tool': ..., 'tool_input': ...} instead of {'function': ..., 'parameters': ...}"
+   }
+  },
+  "hardware": {
+   "platform": "Linux-6.6.122+-x86_64-with-glibc2.39",
+   "python": "3.13.16",
+   "processor": "x86_64",
+   "cpu_count": 2,
+   "ram_gb": 12.7,
+   "cpu_model": "AMD EPYC 7B12",
+   "torch": "2.11.0+cpu",
+   "cuda_available": false
+  },
+  "packages": {
+   "numpy": "2.1.3",
+   "scipy": "1.16.3",
+   "scikit-learn": "1.6.1",
+   "torch": "2.11.0+cpu",
+   "transformers": "5.18.0",
+   "sentence-transformers": "5.7.0",
+   "datasets": "4.8.5",
+   "bert-score": null,
+   "ddgs": null,
+   "jsonschema": "4.26.0",
+   "matplotlib": "3.10.0",
+   "pandas": "2.2.3"
+  }
+ }
+}

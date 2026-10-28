@@ -1,0 +1,19 @@
+\begin{table}[t]
+\centering
+\caption{Examples of successful and failed corrections on real LLM calls}
+\label{tab:correction_examples_real}
+\begin{tabular}{lrrrrr}
+\hline
+case & model & request & model output & system output & gold call \\
+\hline
+corrected (wrong -> exact) & Qwen2.5-0.5B-Instruct & Get the upcoming public holidays worldwide for the next 7 days. & {"name": "PublicHolidayNextPublicHolidaysWorldwide"} & {"function": "PublicHolidayNextPublicHolidaysWorldwide", "parameters": & {"function": "PublicHolidayNextPublicHolidaysWorldwide", "parameters": \\
+corrected (wrong -> exact) & TinyLlama-1.1B-Chat-v1.0 & I'm having a party tonight and want to entertain my guests with some C & Response: Here's an example JSON object for the "jokes\_random\_get" fun & {"function": "jokes\_random\_get", "parameters": {}} & {"function": "jokes\_random\_get", "parameters": {}} \\
+flagged, not fixed & Qwen2.5-3B-Instruct & I'm planning a road trip across Europe. Can you provide me with inform & {"function": "CountryAvailableCountries", "parameters": {"countryCode" & {"function": "CountryAvailableCountries", "parameters": {}} & {"function": "CountryCountryInfo", "parameters": {"countryCode": "IT"} \\
+flagged, not fixed & TinyLlama-1.1B-Chat-v1.0 & I am curious about how the Chinese New Year is celebrated. Could you f & Response: Sure, I'd be happy to provide you with the detailed informat & null & {"function": "getHolidayDetails", "parameters": {"holidayId": "chinese \\
+missed (semantic error) & Qwen2.5-3B-Instruct & I'm planning a trip to Japan next month. Could you find out how much 1 & {"function": "convert\_get", "parameters": {"api\_key": "mySecretApiKey" & {"function": "convert\_get", "parameters": {"api\_key": "mySecretApiKey" & {"function": "convert\_get", "parameters": {"api\_key": "8BbG6gN9g3Y29h5 \\
+missed (semantic error) & Qwen2.5-0.5B-Instruct & I just finished watching "My Hero Academia," and I absolutely loved it & {   "function": "getRecommendations",   "parameters": {     "animeId": & {"function": "getRecommendations", "parameters": {"animeId": 123456}} & {"function": "searchAnime", "parameters": {"query": "Your Lie in April \\
+correct, left untouched & Phi-3.5-mini-instruct & I need the last update date and name of the airport with the ICAO code & {"function": "AirportApi\_getAirport", "parameters": {"icao\_code": "EDD & {"function": "AirportApi\_getAirport", "parameters": {"icao\_code": "EDD & {"function": "AirportApi\_getAirport", "parameters": {"icao\_code": "EDD \\
+correct, left untouched & Phi-3.5-mini-instruct & I'm planning to make a fruit salad, and I want to include fruits from  & {"function": "getFruitsByOrder", "parameters": {"order": "Sapindales"} & {"function": "getFruitsByOrder", "parameters": {"order": "Sapindales"} & {"function": "getFruitsByOrder", "parameters": {"order": "Sapindales"} \\
+\hline
+\end{tabular}
+\end{table}

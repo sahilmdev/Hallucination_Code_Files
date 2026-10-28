@@ -1,0 +1,2349 @@
+{
+ "_meta": {
+  "notebook": "Code_5b",
+  "kind": "run",
+  "data_version": "data_v2",
+  "run_id": "run_A",
+  "config_hash": "d1a9e5276230",
+  "core_version": "2.0.0",
+  "created_utc": "2026-10-25T19:32:13Z"
+ },
+ "data": {
+  "method": "SelfCheckGPT-style sampling consistency adapted to tool calls (Manakul et al., EMNLP 2023)",
+  "n_samples": 3,
+  "temperature": 1.0,
+  "models": [
+   "Qwen/Qwen2.5-1.5B-Instruct",
+   "Qwen/Qwen2.5-3B-Instruct",
+   "microsoft/Phi-3.5-mini-instruct"
+  ],
+  "similarity": "0.5*[same function] + 0.5*Jaccard((param, value) pairs)",
+  "threshold_rule": "balanced accuracy on a 30% tuning part of the queries",
+  "tune_ids": [
+   "R0000",
+   "R0002",
+   "R0003",
+   "R0011",
+   "R0014",
+   "R0017",
+   "R0018",
+   "R0020",
+   "R0034",
+   "R0036",
+   "R0042",
+   "R0049",
+   "R0050",
+   "R0056",
+   "R0059",
+   "R0060",
+   "R0064",
+   "R0073",
+   "R0080",
+   "R0081",
+   "R0082",
+   "R0083",
+   "R0084",
+   "R0089",
+   "R0092",
+   "R0096",
+   "R0114",
+   "R0118",
+   "R0121",
+   "R0123",
+   "R0125",
+   "R0126",
+   "R0130",
+   "R0134",
+   "R0152",
+   "R0162",
+   "R0164",
+   "R0165",
+   "R0169",
+   "R0173",
+   "R0175",
+   "R0178",
+   "R0180",
+   "R0182",
+   "R0184",
+   "R0186",
+   "R0195",
+   "R0200",
+   "R0208"
+  ],
+  "test_ids": [
+   "R0001",
+   "R0004",
+   "R0005",
+   "R0006",
+   "R0007",
+   "R0008",
+   "R0009",
+   "R0010",
+   "R0012",
+   "R0013",
+   "R0015",
+   "R0016",
+   "R0024",
+   "R0025",
+   "R0026",
+   "R0027",
+   "R0028",
+   "R0029",
+   "R0030",
+   "R0031",
+   "R0032",
+   "R0033",
+   "R0035",
+   "R0037",
+   "R0038",
+   "R0039",
+   "R0040",
+   "R0041",
+   "R0043",
+   "R0044",
+   "R0045",
+   "R0051",
+   "R0052",
+   "R0053",
+   "R0054",
+   "R0055",
+   "R0057",
+   "R0058",
+   "R0066",
+   "R0067",
+   "R0068",
+   "R0070",
+   "R0071",
+   "R0072",
+   "R0079",
+   "R0085",
+   "R0086",
+   "R0087",
+   "R0088",
+   "R0090",
+   "R0091",
+   "R0098",
+   "R0100",
+   "R0101",
+   "R0106",
+   "R0107",
+   "R0109",
+   "R0110",
+   "R0112",
+   "R0115",
+   "R0116",
+   "R0117",
+   "R0119",
+   "R0120",
+   "R0122",
+   "R0124",
+   "R0127",
+   "R0128",
+   "R0129",
+   "R0131",
+   "R0132",
+   "R0136",
+   "R0137",
+   "R0138",
+   "R0140",
+   "R0145",
+   "R0149",
+   "R0153",
+   "R0154",
+   "R0156",
+   "R0157",
+   "R0158",
+   "R0159",
+   "R0160",
+   "R0161",
+   "R0163",
+   "R0166",
+   "R0167",
+   "R0168",
+   "R0170",
+   "R0171",
+   "R0172",
+   "R0174",
+   "R0176",
+   "R0177",
+   "R0179",
+   "R0181",
+   "R0183",
+   "R0185",
+   "R0187",
+   "R0188",
+   "R0189",
+   "R0190",
+   "R0191",
+   "R0192",
+   "R0193",
+   "R0194",
+   "R0196",
+   "R0197",
+   "R0198",
+   "R0210",
+   "R0211",
+   "R0213"
+  ],
+  "by_model": {
+   "Qwen/Qwen2.5-1.5B-Instruct": {
+    "threshold": 0.06666666666666676,
+    "n_tune": 49,
+    "n_test": 113,
+    "auroc_all": 0.8184523809523809,
+    "selfcheck": {
+     "n": 113,
+     "tp": 48,
+     "tn": 40,
+     "fp": 13,
+     "fn": 12,
+     "accuracy": 0.7787610619469026,
+     "precision": 0.7868852459016393,
+     "recall": 0.8,
+     "f1": 0.7933884297520661,
+     "balanced_accuracy": 0.7773584905660378,
+     "fpr": 0.24528301886792453,
+     "fnr": 0.2,
+     "specificity": 0.7547169811320755
+    },
+    "schema_only": {
+     "n": 113,
+     "tp": 8,
+     "tn": 53,
+     "fp": 0,
+     "fn": 52,
+     "accuracy": 0.5398230088495575,
+     "precision": 1.0,
+     "recall": 0.13333333333333333,
+     "f1": 0.23529411764705882,
+     "balanced_accuracy": 0.5666666666666667,
+     "fpr": 0.0,
+     "fnr": 0.8666666666666667,
+     "specificity": 1.0
+    },
+    "union": {
+     "n": 113,
+     "tp": 50,
+     "tn": 40,
+     "fp": 13,
+     "fn": 10,
+     "accuracy": 0.7964601769911505,
+     "precision": 0.7936507936507936,
+     "recall": 0.8333333333333334,
+     "f1": 0.8130081300813008,
+     "balanced_accuracy": 0.7940251572327044,
+     "fpr": 0.24528301886792453,
+     "fnr": 0.16666666666666666,
+     "specificity": 0.7547169811320755
+    },
+    "errors_caught_only_by_selfcheck": 42,
+    "mcnemar_detection_correct": {
+     "n01": 15,
+     "n10": 42,
+     "p_value": 0.00046000500864879857
+    },
+    "ci_balanced_accuracy_selfcheck": {
+     "point": 0.7773584905660378,
+     "low": 0.6995566944398615,
+     "high": 0.852840613029099
+    }
+   },
+   "Qwen/Qwen2.5-3B-Instruct": {
+    "threshold": 0.05555555555555569,
+    "n_tune": 49,
+    "n_test": 113,
+    "auroc_all": 0.8399420466676834,
+    "selfcheck": {
+     "n": 113,
+     "tp": 46,
+     "tn": 51,
+     "fp": 4,
+     "fn": 12,
+     "accuracy": 0.8584070796460177,
+     "precision": 0.92,
+     "recall": 0.7931034482758621,
+     "f1": 0.851851851851852,
+     "balanced_accuracy": 0.8601880877742947,
+     "fpr": 0.07272727272727272,
+     "fnr": 0.20689655172413793,
+     "specificity": 0.9272727272727272
+    },
+    "schema_only": {
+     "n": 113,
+     "tp": 8,
+     "tn": 55,
+     "fp": 0,
+     "fn": 50,
+     "accuracy": 0.5575221238938053,
+     "precision": 1.0,
+     "recall": 0.13793103448275862,
+     "f1": 0.2424242424242424,
+     "balanced_accuracy": 0.5689655172413793,
+     "fpr": 0.0,
+     "fnr": 0.8620689655172413,
+     "specificity": 1.0
+    },
+    "union": {
+     "n": 113,
+     "tp": 47,
+     "tn": 51,
+     "fp": 4,
+     "fn": 11,
+     "accuracy": 0.8672566371681416,
+     "precision": 0.9215686274509803,
+     "recall": 0.8103448275862069,
+     "f1": 0.8623853211009175,
+     "balanced_accuracy": 0.868808777429467,
+     "fpr": 0.07272727272727272,
+     "fnr": 0.1896551724137931,
+     "specificity": 0.9272727272727272
+    },
+    "errors_caught_only_by_selfcheck": 39,
+    "mcnemar_detection_correct": {
+     "n01": 5,
+     "n10": 39,
+     "p_value": 1.4051624930289082e-07
+    },
+    "ci_balanced_accuracy_selfcheck": {
+     "point": 0.8601880877742947,
+     "low": 0.7957361467933156,
+     "high": 0.9144655124424073
+    }
+   },
+   "microsoft/Phi-3.5-mini-instruct": {
+    "threshold": 0.11111111111111116,
+    "n_tune": 49,
+    "n_test": 113,
+    "auroc_all": 0.8300925925925926,
+    "selfcheck": {
+     "n": 113,
+     "tp": 46,
+     "tn": 42,
+     "fp": 5,
+     "fn": 20,
+     "accuracy": 0.7787610619469026,
+     "precision": 0.9019607843137255,
+     "recall": 0.696969696969697,
+     "f1": 0.7863247863247863,
+     "balanced_accuracy": 0.7952933591231464,
+     "fpr": 0.10638297872340426,
+     "fnr": 0.30303030303030304,
+     "specificity": 0.8936170212765957
+    },
+    "schema_only": {
+     "n": 113,
+     "tp": 13,
+     "tn": 47,
+     "fp": 0,
+     "fn": 53,
+     "accuracy": 0.5309734513274337,
+     "precision": 1.0,
+     "recall": 0.19696969696969696,
+     "f1": 0.3291139240506329,
+     "balanced_accuracy": 0.5984848484848485,
+     "fpr": 0.0,
+     "fnr": 0.803030303030303,
+     "specificity": 1.0
+    },
+    "union": {
+     "n": 113,
+     "tp": 50,
+     "tn": 42,
+     "fp": 5,
+     "fn": 16,
+     "accuracy": 0.8141592920353983,
+     "precision": 0.9090909090909091,
+     "recall": 0.7575757575757576,
+     "f1": 0.8264462809917356,
+     "balanced_accuracy": 0.8255963894261766,
+     "fpr": 0.10638297872340426,
+     "fnr": 0.24242424242424243,
+     "specificity": 0.8936170212765957
+    },
+    "errors_caught_only_by_selfcheck": 37,
+    "mcnemar_detection_correct": {
+     "n01": 9,
+     "n10": 37,
+     "p_value": 4.0560361327380035e-05
+    },
+    "ci_balanced_accuracy_selfcheck": {
+     "point": 0.7952933591231464,
+     "low": 0.7167626208578244,
+     "high": 0.8609523809523809
+    }
+   }
+  },
+  "per_record": {
+   "Qwen/Qwen2.5-1.5B-Instruct|R0000": {
+    "score": 0.08333333333333337,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0001": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0002": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0003": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0004": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0005": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0006": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0007": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0008": {
+    "score": 0.33333333333333337,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0009": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0010": {
+    "score": 0.16666666666666663,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0011": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0012": {
+    "score": 0.6666666666666667,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0013": {
+    "score": 0.6666666666666667,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0014": {
+    "score": 0.5,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0015": {
+    "score": 0.08333333333333337,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0016": {
+    "score": 0.25,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0017": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0018": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0020": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0024": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0025": {
+    "score": 0.41666666666666663,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0026": {
+    "score": 0.11111111111111116,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0027": {
+    "score": 0.22222222222222232,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0028": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0029": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0030": {
+    "score": 0.11111111111111116,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0031": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0032": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0033": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0034": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0035": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0036": {
+    "score": 0.25,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0037": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0038": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0039": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0040": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0041": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0042": {
+    "score": 0.33333333333333337,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0043": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0044": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0045": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0049": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0050": {
+    "score": 0.26388888888888895,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0051": {
+    "score": 0.27222222222222214,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0052": {
+    "score": 0.188888888888889,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0053": {
+    "score": 0.36944444444444446,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0054": {
+    "score": 0.3916666666666667,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0055": {
+    "score": 0.3222222222222223,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0056": {
+    "score": 0.3055555555555557,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0057": {
+    "score": 0.4027777777777778,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0058": {
+    "score": 0.6111111111111112,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0059": {
+    "score": 0.3833333333333333,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0060": {
+    "score": 0.5,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0064": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0066": {
+    "score": 0.16666666666666663,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0067": {
+    "score": 0.3916666666666667,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0068": {
+    "score": 1.0,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0070": {
+    "score": 0.5,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0071": {
+    "score": 0.36111111111111116,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0072": {
+    "score": 0.33333333333333337,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0073": {
+    "score": 0.38888888888888895,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0079": {
+    "score": 0.5,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0080": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0081": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0082": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0083": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0084": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0085": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0086": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0087": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0088": {
+    "score": 1.0,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0089": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0090": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0091": {
+    "score": 0.05555555555555569,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0092": {
+    "score": 0.06666666666666676,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0096": {
+    "score": 0.16666666666666663,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0098": {
+    "score": 0.16666666666666663,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0100": {
+    "score": 0.4666666666666667,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0101": {
+    "score": 0.5,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0106": {
+    "score": 0.15000000000000002,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0107": {
+    "score": 0.33333333333333337,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0109": {
+    "score": 0.4666666666666667,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0110": {
+    "score": 0.04166666666666663,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0112": {
+    "score": 0.9583333333333334,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0114": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0115": {
+    "score": 0.11111111111111116,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0116": {
+    "score": 0.19444444444444453,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0117": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0118": {
+    "score": 0.16666666666666663,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0119": {
+    "score": 0.05555555555555569,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0120": {
+    "score": 0.45833333333333337,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0121": {
+    "score": 0.2777777777777778,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0122": {
+    "score": 0.22222222222222232,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0123": {
+    "score": 0.6666666666666667,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0124": {
+    "score": 0.5,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0125": {
+    "score": 1.0,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0126": {
+    "score": 0.6666666666666667,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0127": {
+    "score": 0.6666666666666667,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0128": {
+    "score": 0.33333333333333337,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0129": {
+    "score": 0.6111111111111112,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0130": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0131": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0132": {
+    "score": 0.38888888888888895,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0134": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0136": {
+    "score": 0.3650793650793651,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0137": {
+    "score": 0.41666666666666663,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0138": {
+    "score": 0.20793650793650797,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0140": {
+    "score": 0.16666666666666663,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0145": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0149": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0152": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0153": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0154": {
+    "score": 0.08333333333333337,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0156": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0157": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0158": {
+    "score": 0.08333333333333337,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0159": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0160": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0161": {
+    "score": 0.25,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0162": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0163": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0164": {
+    "score": 0.375,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0165": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0166": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0167": {
+    "score": 0.8888888888888888,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0168": {
+    "score": 0.2333333333333334,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0169": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0170": {
+    "score": 0.16666666666666663,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0171": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0172": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0173": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0174": {
+    "score": 0.41666666666666663,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0175": {
+    "score": 0.25,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0176": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0177": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0178": {
+    "score": 0.44444444444444453,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0179": {
+    "score": 0.08333333333333337,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0180": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0181": {
+    "score": 0.5,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0182": {
+    "score": 0.08333333333333337,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0183": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0184": {
+    "score": 0.25,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0185": {
+    "score": 0.5,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0186": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0187": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0188": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0189": {
+    "score": 0.6666666666666667,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0190": {
+    "score": 0.08333333333333337,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0191": {
+    "score": 0.04166666666666663,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0192": {
+    "score": 0.06666666666666676,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0193": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0194": {
+    "score": 0.06666666666666676,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0195": {
+    "score": 0.05555555555555569,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0196": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0197": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0198": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0200": {
+    "score": 0.3472222222222223,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0208": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0210": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0211": {
+    "score": 0.06666666666666676,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-1.5B-Instruct|R0213": {
+    "score": 0.41666666666666663,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0000": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0001": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0002": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0003": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0004": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0005": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0006": {
+    "score": 0.16666666666666663,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0007": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0008": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0009": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0010": {
+    "score": 0.16666666666666663,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0011": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0012": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0013": {
+    "score": 0.5,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0014": {
+    "score": 0.16666666666666663,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0015": {
+    "score": 0.25,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0016": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0017": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0018": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0020": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0024": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0025": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0026": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0027": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0028": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0029": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0030": {
+    "score": 0.125,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0031": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0032": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0033": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0034": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0035": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0036": {
+    "score": 0.16666666666666663,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0037": {
+    "score": 0.16666666666666663,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0038": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0039": {
+    "score": 0.33333333333333337,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0040": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0041": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0042": {
+    "score": 0.33333333333333337,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0043": {
+    "score": 0.16666666666666663,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0044": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0045": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0049": {
+    "score": 0.33333333333333337,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0050": {
+    "score": 0.08333333333333337,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0051": {
+    "score": 0.08333333333333337,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0052": {
+    "score": 0.08333333333333337,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0053": {
+    "score": 0.16666666666666663,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0054": {
+    "score": 0.20833333333333337,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0055": {
+    "score": 0.08333333333333337,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0056": {
+    "score": 0.08333333333333337,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0057": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0058": {
+    "score": 0.25,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0059": {
+    "score": 0.16666666666666663,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0060": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0064": {
+    "score": 0.16666666666666663,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0066": {
+    "score": 0.08333333333333337,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0067": {
+    "score": 0.35,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0068": {
+    "score": 0.16666666666666663,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0070": {
+    "score": 0.4027777777777778,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0071": {
+    "score": 0.16666666666666663,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0072": {
+    "score": 0.33333333333333337,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0073": {
+    "score": 0.22222222222222232,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0079": {
+    "score": 0.31666666666666676,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0080": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0081": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0082": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0083": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0084": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0085": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0086": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0087": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0088": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0089": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0090": {
+    "score": 0.33333333333333337,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0091": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0092": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0096": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0098": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0100": {
+    "score": 0.36111111111111116,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0101": {
+    "score": 0.08333333333333337,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0106": {
+    "score": 0.06666666666666676,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0107": {
+    "score": 0.08333333333333337,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0109": {
+    "score": 0.4666666666666667,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0110": {
+    "score": 0.1333333333333333,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0112": {
+    "score": 0.5111111111111111,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0114": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0115": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0116": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0117": {
+    "score": 0.08333333333333337,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0118": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0119": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0120": {
+    "score": 0.16666666666666663,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0121": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0122": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0123": {
+    "score": 0.1805555555555557,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0124": {
+    "score": 0.16666666666666663,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0125": {
+    "score": 0.33333333333333337,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0126": {
+    "score": 0.16666666666666663,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0127": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0128": {
+    "score": 0.25,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0129": {
+    "score": 0.25,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0130": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0131": {
+    "score": 0.33333333333333337,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0132": {
+    "score": 0.2777777777777778,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0134": {
+    "score": 0.16666666666666663,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0136": {
+    "score": 0.1333333333333333,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0137": {
+    "score": 0.3222222222222223,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0138": {
+    "score": 0.4368386243386243,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0140": {
+    "score": 0.1865079365079364,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0145": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0149": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0152": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0153": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0154": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0156": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0157": {
+    "score": 0.33333333333333337,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0158": {
+    "score": 0.21666666666666667,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0159": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0160": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0161": {
+    "score": 0.25,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0162": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0163": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0164": {
+    "score": 0.16666666666666663,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0165": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0166": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0167": {
+    "score": 1.0,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0168": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0169": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0170": {
+    "score": 0.09999999999999998,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0171": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0172": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0173": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0174": {
+    "score": 0.22222222222222232,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0175": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0176": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0177": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0178": {
+    "score": 0.11111111111111116,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0179": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0180": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0181": {
+    "score": 0.33333333333333337,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0182": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0183": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0184": {
+    "score": 0.3472222222222223,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0185": {
+    "score": 0.16666666666666663,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0186": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0187": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0188": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0189": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0190": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0191": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0192": {
+    "score": 0.17222222222222217,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0193": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0194": {
+    "score": 0.33333333333333337,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0195": {
+    "score": 0.5952380952380951,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0196": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0197": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0198": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0200": {
+    "score": 0.05555555555555569,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0208": {
+    "score": 0.11111111111111116,
+    "flag": 1
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0210": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0211": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "Qwen/Qwen2.5-3B-Instruct|R0213": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0000": {
+    "score": 0.22222222222222232,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0001": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0002": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0003": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0004": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0005": {
+    "score": 0.5833333333333333,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0006": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0007": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0008": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0009": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0010": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0011": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0012": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0013": {
+    "score": 0.1333333333333333,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0014": {
+    "score": 0.11111111111111116,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0015": {
+    "score": 0.2777777777777777,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0016": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0017": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0018": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0020": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0024": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0025": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0026": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0027": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0028": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0029": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0030": {
+    "score": 0.33333333333333337,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0031": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0032": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0033": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0034": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0035": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0036": {
+    "score": 0.22222222222222232,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0037": {
+    "score": 0.16666666666666663,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0038": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0039": {
+    "score": 0.6666666666666667,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0040": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0041": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0042": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0043": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0044": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0045": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0049": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0050": {
+    "score": 0.29999999999999993,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0051": {
+    "score": 0.21666666666666667,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0052": {
+    "score": 0.35,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0053": {
+    "score": 0.40555555555555556,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0054": {
+    "score": 0.3555555555555555,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0055": {
+    "score": 0.16666666666666663,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0056": {
+    "score": 0.16666666666666663,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0057": {
+    "score": 0.38888888888888884,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0058": {
+    "score": 0.21666666666666667,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0059": {
+    "score": 0.4095238095238095,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0060": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0064": {
+    "score": 0.33333333333333337,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0066": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0067": {
+    "score": 0.29999999999999993,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0068": {
+    "score": 0.35,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0070": {
+    "score": 0.3416666666666667,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0071": {
+    "score": 0.16666666666666663,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0072": {
+    "score": 0.38888888888888895,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0073": {
+    "score": 0.3666666666666667,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0079": {
+    "score": 0.26388888888888884,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0080": {
+    "score": 0.11111111111111116,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0081": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0082": {
+    "score": 0.33333333333333337,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0083": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0084": {
+    "score": 0.6666666666666667,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0085": {
+    "score": 0.6666666666666667,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0086": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0087": {
+    "score": 0.33333333333333337,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0088": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0089": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0090": {
+    "score": 0.6666666666666667,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0091": {
+    "score": 0.3055555555555557,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0092": {
+    "score": 0.06666666666666676,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0096": {
+    "score": 0.36111111111111116,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0098": {
+    "score": 0.06666666666666676,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0100": {
+    "score": 0.6952380952380952,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0101": {
+    "score": 0.33333333333333337,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0106": {
+    "score": 0.06666666666666676,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0107": {
+    "score": 0.16666666666666663,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0109": {
+    "score": 0.06666666666666676,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0110": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0112": {
+    "score": 0.16666666666666663,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0114": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0115": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0116": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0117": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0118": {
+    "score": 0.7916666666666666,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0119": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0120": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0121": {
+    "score": 0.5,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0122": {
+    "score": 0.41666666666666663,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0123": {
+    "score": 0.2777777777777778,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0124": {
+    "score": 0.33333333333333337,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0125": {
+    "score": 0.5,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0126": {
+    "score": 0.08333333333333337,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0127": {
+    "score": 0.5,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0128": {
+    "score": 0.33333333333333337,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0129": {
+    "score": 0.8472222222222222,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0130": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0131": {
+    "score": 0.75,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0132": {
+    "score": 0.5,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0134": {
+    "score": 0.08333333333333337,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0136": {
+    "score": 0.5297619047619049,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0137": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0138": {
+    "score": 0.5,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0140": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0145": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0149": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0152": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0153": {
+    "score": 0.25,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0154": {
+    "score": 0.5,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0156": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0157": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0158": {
+    "score": 0.08333333333333337,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0159": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0160": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0161": {
+    "score": 0.25,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0162": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0163": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0164": {
+    "score": 0.08333333333333337,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0165": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0166": {
+    "score": 0.3472222222222223,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0167": {
+    "score": 0.16666666666666663,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0168": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0169": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0170": {
+    "score": 0.16666666666666663,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0171": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0172": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0173": {
+    "score": 0.3027777777777777,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0174": {
+    "score": 0.22222222222222232,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0175": {
+    "score": 0.22222222222222232,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0176": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0177": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0178": {
+    "score": 0.44444444444444453,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0179": {
+    "score": 0.16666666666666663,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0180": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0181": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0182": {
+    "score": 0.05555555555555569,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0183": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0184": {
+    "score": 0.1333333333333333,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0185": {
+    "score": 0.16666666666666663,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0186": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0187": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0188": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0189": {
+    "score": 0.5,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0190": {
+    "score": 0.04166666666666663,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0191": {
+    "score": 0.1416666666666666,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0192": {
+    "score": 0.16666666666666663,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0193": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0194": {
+    "score": 0.1333333333333333,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0195": {
+    "score": 0.4,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0196": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0197": {
+    "score": 0.0,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0198": {
+    "score": 0.15000000000000002,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0200": {
+    "score": 0.22222222222222232,
+    "flag": 1
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0208": {
+    "score": 0.05555555555555569,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0210": {
+    "score": 0.08333333333333337,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0211": {
+    "score": 0.08333333333333337,
+    "flag": 0
+   },
+   "microsoft/Phi-3.5-mini-instruct|R0213": {
+    "score": 0.3666666666666667,
+    "flag": 1
+   }
+  },
+  "hardware": {
+   "platform": "Linux-6.6.122+-x86_64-with-glibc2.39",
+   "python": "3.13.16",
+   "processor": "x86_64",
+   "cpu_count": 2,
+   "ram_gb": 12.7,
+   "cpu_model": "Intel(R) Xeon(R) CPU @ 2.00GHz",
+   "torch": "2.11.0+cu130",
+   "cuda_available": true,
+   "gpu": "Tesla T4",
+   "gpu_mem_gb": 15.6
+  },
+  "packages": {
+   "numpy": "2.1.3",
+   "scipy": "1.16.3",
+   "scikit-learn": "1.6.1",
+   "torch": "2.11.0+cu130",
+   "transformers": "5.20.2",
+   "sentence-transformers": "5.7.0",
+   "datasets": "4.8.5",
+   "bert-score": null,
+   "ddgs": null,
+   "jsonschema": "4.26.0",
+   "matplotlib": "3.10.0",
+   "pandas": "2.2.3"
+  }
+ }
+}

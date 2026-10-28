@@ -1,0 +1,20 @@
+\begin{table}[t]
+\centering
+\caption{Examples of successful and failed corrections (synthetic test calls)}
+\label{tab:correction_examples_synthetic}
+\begin{tabular}{lrrrrr}
+\hline
+true error & outcome & category & generated call & system output & fixes applied \\
+\hline
+WRONG\_FUNCTION & success & OK\_CORRECTED\_EXACT & {"function": "get\_YouTube Influencer Search.getSearchResults", "parameters": {"i & {"function": "YouTube Influencer Search.getSearchResults", "parameters": {"id":  & function 'get\_YouTube Influencer Search.getSearchResults' -> \\
+WRONG\_FUNCTION & failure & CORRECTION\_INCOMPLETE & {"function": "DeFi Watch.NonExistent", "parameters": {"address": "", "chain": "" & {"function": "DeFi Watch.NonExistent", "parameters": {"address": "", "chain": "" & - \\
+EXTRA\_PARAMETER & success & OK\_CORRECTED\_EXACT & {"function": "ChurchApp.Search Contacts", "parameters": {"q": "", "name": "", "p & {"function": "ChurchApp.Search Contacts", "parameters": {"q": "", "name": "", "p & removed undeclared 'max\_results' \\
+WRONG\_TYPE & success & OK\_CORRECTED\_EXACT & {"function": "Opensea\_v2.Retrieve collection stats", "parameters": {"collection\_ & {"function": "Opensea\_v2.Retrieve collection stats", "parameters": {"collection\_ & cast 'collection\_slug' -> string \\
+WRONG\_TYPE & failure & CORRECTION\_INCOMPLETE & {"function": "Aliexpress DataHub.Aliexpress - Item Shipping Detail", "parameters & {"function": "Aliexpress DataHub.Aliexpress - Item Shipping Detail", "parameters & cast 'itemId' -> number \\
+WRONG\_VALUE & failure & MISSED\_DETECTION & {"function": "Real-Time Product Search.Search", "parameters": {"q": "49.597, -8. & {"function": "Real-Time Product Search.Search", "parameters": {"q": "49.597, -8. & - \\
+MISSING\_PARAMETER & failure & SCHEMA\_VALID\_PLACEHOLDER\_VALUE & {"function": "Mobile-Phones.Get Devices Details", "parameters": {}} & {"function": "Mobile-Phones.Get Devices Details", "parameters": {"device\_id": 0. & inserted 'device\_id' = number placeholder \\
+WRONG\_FORMAT & success & OK\_CORRECTED\_EXACT & {"function\_name": "compare\_prices", "function\_params": {"medication1": "Aspirin" & {"function": "compare\_prices", "parameters": {"medication1": "Aspirin", "medicat & restructured envelope to {function, parameters} \\
+WRONG\_FORMAT & failure & SCHEMA\_VALID\_NOT\_EXACT & {"type": "function", "function": {"name": "api.video.GET\_analytics-videos-videoI & {"function": "api.video.GET\_analytics-videos-videoId", "parameters": {"videoId": & restructured envelope to {function, parameters}; cast 'metad \\
+\hline
+\end{tabular}
+\end{table}

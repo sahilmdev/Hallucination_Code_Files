@@ -1,0 +1,162 @@
+{"id": "R0000", "output": "{\"function\": \"PublicHolidayIsTodayPublicHoliday\", \"parameters\": {\"countryCode\": \"CN\"}}", "seconds": 0.250496875500005}
+{"id": "R0001", "output": "{\"function\": \"CountryCountryInfo\", \"parameters\": {\"countryCode\": \"CN\"}}", "seconds": 0.250496875500005}
+{"id": "R0002", "output": "{\"function\": \"CountryAvailableCountries\", \"parameters\": {}}", "seconds": 0.250496875500005}
+{"id": "R0003", "output": "{\"function\": \"VersionGetVersion\", \"parameters\": {}}", "seconds": 0.250496875500005}
+{"id": "R0004", "output": "{\"function\": \"LongWeekendLongWeekend\", \"parameters\": {\"year\": 2024, \"countryCode\": \"US\"}}", "seconds": 0.250496875500005}
+{"id": "R0005", "output": "{\"function\": \"PublicHolidayNextPublicHolidays\", \"parameters\": {\"countryCode\": \"GB\"}}", "seconds": 0.250496875500005}
+{"id": "R0006", "output": "{\"function\": \"PublicHolidayNextPublicHolidays\", \"parameters\": {\"countryCode\": \"AU\"}}", "seconds": 0.250496875500005}
+{"id": "R0007", "output": "{\"function\": \"PublicHolidayNextPublicHolidaysWorldwide\", \"parameters\": {}}", "seconds": 0.250496875500005}
+{"id": "R0008", "output": "{\"function\": \"LongWeekendLongWeekend\", \"parameters\": {\"year\": 2023, \"countryCode\": \"JP\"}}", "seconds": 0.24707195687498995}
+{"id": "R0009", "output": "{\"function\": \"PublicHolidayNextPublicHolidaysWorldwide\", \"parameters\": {}}", "seconds": 0.24707195687498995}
+{"id": "R0010", "output": "{\n  \"function\": \"CountryCountryInfo\",\n  \"parameters\": {\n    \"countryCode\": \"FR\"\n  }\n}", "seconds": 0.24707195687498995}
+{"id": "R0011", "output": "{\"function\": \"PublicHolidayNextPublicHolidays\", \"parameters\": {\"countryCode\": \"DE\"}}", "seconds": 0.24707195687498995}
+{"id": "R0012", "output": "{\"function\": \"PublicHolidayNextPublicHolidays\", \"parameters\": {\"countryCode\": \"US\"}}", "seconds": 0.24707195687498995}
+{"id": "R0013", "output": "{\"function\": \"CountryCountryInfo\", \"parameters\": {\"countryCode\": \"IT\"}}", "seconds": 0.24707195687498995}
+{"id": "R0014", "output": "{\n  \"function\": \"PublicHolidayNextPublicHolidays\",\n  \"parameters\": {\n    \"countryCode\": \"JP\"\n  }\n}", "seconds": 0.24707195687498995}
+{"id": "R0015", "output": "{\"function\": \"PublicHolidayNextPublicHolidays\", \"parameters\": {\"countryCode\": \"CA\", \"year\": 2023}}", "seconds": 0.24707195687498995}
+{"id": "R0016", "output": "{\"function\": \"LongWeekendLongWeekend\", \"parameters\": {\"year\": 2023, \"countryCode\": \"DE\"}}", "seconds": 0.36022689912500994}
+{"id": "R0017", "output": "{\"function\": \"AirportApi_getAirport\", \"parameters\": {\"icao_code\": \"EDDF\"}}", "seconds": 0.36022689912500994}
+{"id": "R0018", "output": "{\n  \"function\": \"AirportApi_getAirport\",\n  \"parameters\": {\n    \"icao_code\": \"EDDM\"\n  }\n}", "seconds": 0.36022689912500994}
+{"id": "R0020", "output": "{\n  \"function\": \"AirportApi_getAirport\",\n  \"parameters\": {\n    \"icao_code\": \"EDDB\"\n  }\n}", "seconds": 0.36022689912500994}
+{"id": "R0024", "output": "{\n  \"function\": \"AirportApi_getAirport\",\n  \"parameters\": {\n    \"icao_code\": \"EDDM\"\n  }\n}", "seconds": 0.36022689912500994}
+{"id": "R0025", "output": "{\"function\": \"charts_get\", \"parameters\": {\"apt\": \"AVL\", \"group\": 1}}", "seconds": 0.36022689912500994}
+{"id": "R0026", "output": "{\"function\": \"charts_get\", \"parameters\": {\"apt\": \"AVL\", \"group\": 1}}", "seconds": 0.36022689912500994}
+{"id": "R0027", "output": "{\"function\": \"charts_changes_get\", \"parameters\": {\"apt\": \"AVL\", \"chart_name\": \"Arrivals\"}}", "seconds": 0.36022689912500994}
+{"id": "R0028", "output": "{\"function\": \"charts_afd_get\", \"parameters\": {\"apt\": \"AVL\"}}", "seconds": 0.508387741000007}
+{"id": "R0029", "output": "{\"function\": \"preferred-routes_get\", \"parameters\": {}}", "seconds": 0.508387741000007}
+{"id": "R0030", "output": "{\"function\": \"preferred-routes_search_get\", \"parameters\": {\"origin\": \"ACK\", \"dest\": \"ERI\", \"type\": \"L\"}}", "seconds": 0.508387741000007}
+{"id": "R0031", "output": "{\"function\": \"vatsim_pilots_get\", \"parameters\": {\"apt\": \"KATL\", \"dep\": 1, \"arr\": 1}}", "seconds": 0.508387741000007}
+{"id": "R0032", "output": "{\"function\": \"vatsim_controllers_get\", \"parameters\": {\"fac\": \"CHI\"}}", "seconds": 0.508387741000007}
+{"id": "R0033", "output": "{\"function\": \"weather_metar_get\", \"parameters\": {\"apt\": \"KAVL\"}}", "seconds": 0.508387741000007}
+{"id": "R0034", "output": "{\"function\": \"weather_taf_get\", \"parameters\": {\"apt\": \"KAVL\"}}", "seconds": 0.508387741000007}
+{"id": "R0035", "output": "{\n  \"function\": \"weather_metar_get\",\n  \"parameters\": {\n    \"apt\": \"ORD\"\n  }\n}\n{\n  \"function\": \"runway_length_and_surface\",\n  \"parameters\": {\n    \"apt\": \"ORD\"\n  }\n}", "seconds": 0.508387741000007}
+{"id": "R0036", "output": "{\"function\": \"charts_get\", \"parameters\": {\"apt\": \"KLAX\", \"group\": 1}}", "seconds": 0.331096403250001}
+{"id": "R0037", "output": "{\"function\": \"weather_metar_get\", \"parameters\": {\"apt\": \"KJFK\"}}", "seconds": 0.331096403250001}
+{"id": "R0038", "output": "{\"function\": \"jokes_random_get\", \"parameters\": {}}", "seconds": 0.331096403250001}
+{"id": "R0039", "output": "{\"function\": \"jokes_random_music_get\", \"parameters\": {}}", "seconds": 0.331096403250001}
+{"id": "R0040", "output": "{\"function\": \"jokes_random_movie_get\", \"parameters\": {}}", "seconds": 0.331096403250001}
+{"id": "R0041", "output": "{\"function\": \"jokes_search_get\", \"parameters\": {\"query\": \"Texas\"}}", "seconds": 0.331096403250001}
+{"id": "R0042", "output": "{\"function\": \"jokes_random_category_get\", \"parameters\": {\"category\": \"sports\"}}", "seconds": 0.331096403250001}
+{"id": "R0043", "output": "{\"function\": \"jokes_random_get\", \"parameters\": {}}", "seconds": 0.331096403250001}
+{"id": "R0044", "output": "{\"function\": \"api_v2_facts_random_get\", \"parameters\": {}}", "seconds": 0.30774293475001}
+{"id": "R0045", "output": "{\"function\": \"api_v2_facts_random_get\", \"parameters\": {}}", "seconds": 0.30774293475001}
+{"id": "R0049", "output": "{\"function\": \"api_v2_facts_random_get\", \"parameters\": {}}", "seconds": 0.30774293475001}
+{"id": "R0050", "output": "{\n  \"function\": \"current_get\",\n  \"parameters\": {\n    \"access_key\": \"your_access_key_here\",\n    \"query\": \"Paris\",\n    \"units\": \"f\"\n  }\n}", "seconds": 0.30774293475001}
+{"id": "R0051", "output": "{\n  \"function\": \"current_get\",\n  \"parameters\": {\n    \"access_key\": \"your_api_access_key_here\",\n    \"query\": \"New York;Tokyo;Sydney\",\n    \"units\": \"m\"\n  }\n}", "seconds": 0.30774293475001}
+{"id": "R0052", "output": "{\n  \"function\": \"current_get\",\n  \"parameters\": {\n    \"access_key\": \"your_api_access_key_here\",\n    \"query\": \"San Francisco\",\n    \"units\": \"f\"\n  }\n}", "seconds": 0.30774293475001}
+{"id": "R0053", "output": "{\n  \"function\": \"current_get\",\n  \"parameters\": {\n    \"access_key\": \"your_api_access_key_here\",\n    \"query\": \"London\",\n    \"units\": \"s\"\n  }\n}", "seconds": 0.30774293475001}
+{"id": "R0054", "output": "{\n  \"function\": \"current_get\",\n  \"parameters\": {\n    \"access_key\": \"your_api_access_key_here\",\n    \"query\": \"Beijing,Moscow,Rio de Janeiro\",\n    \"units\": \"f\"\n  }\n}", "seconds": 0.30774293475001}
+{"id": "R0055", "output": "{\n  \"function\": \"current_get\",\n  \"parameters\": {\n    \"access_key\": \"your_api_access_key_here\",\n    \"query\": \"Denver\",\n    \"units\": \"s\"\n  }\n}", "seconds": 0.2928095391250025}
+{"id": "R0056", "output": "{\n  \"function\": \"current_get\",\n  \"parameters\": {\n    \"access_key\": \"your_access_key_here\",\n    \"query\": \"Toronto\",\n    \"units\": \"f\"\n  }\n}", "seconds": 0.2928095391250025}
+{"id": "R0057", "output": "{\n  \"function\": \"current_get\",\n  \"parameters\": {\n    \"query\": \"Los Angeles\",\n    \"units\": \"f\"\n  }\n}", "seconds": 0.2928095391250025}
+{"id": "R0058", "output": "{\n  \"function\": \"current_get\",\n  \"parameters\": {\n    \"access_key\": \"your_api_access_key_here\",\n    \"query\": \"New York;Chicago;Denver;Las Vegas\",\n    \"units\": \"f\"\n  }\n}", "seconds": 0.2928095391250025}
+{"id": "R0059", "output": "{\n  \"function\": \"current_get\",\n  \"parameters\": {\n    \"access_key\": \"your_api_access_key_here\",\n    \"query\": \"Miami\",\n    \"units\": \"s\"\n  }\n}", "seconds": 0.2928095391250025}
+{"id": "R0060", "output": "{\"function\": \"api_v2_entries_en_quixotic_get\", \"parameters\": {\"word\": \"quixotic\"}}", "seconds": 0.2928095391250025}
+{"id": "R0064", "output": "{\"function\": \"api_v2_entries_en_word_get\", \"parameters\": {\"word\": \"affect\"}}", "seconds": 0.2928095391250025}
+{"id": "R0066", "output": "{\n  \"function\": \"api_v2_entries_en_ephemeral_get\",\n  \"parameters\": {\n    \"word\": \"ephemeral\"\n  }\n}", "seconds": 0.2928095391250025}
+{"id": "R0067", "output": "{\"function\": \"result_get\", \"parameters\": {\"appid\": \"your_api_key_here\", \"i\": \"New York City\", \"units\": \"imperial\"}}", "seconds": 0.2417780586250018}
+{"id": "R0068", "output": "{\"function\": \"math_sqrt\", \"parameters\": {\"number\": 625}}", "seconds": 0.2417780586250018}
+{"id": "R0070", "output": "{\"function\": \"result_get\", \"parameters\": {\"appid\": \"your_api_key_here\", \"i\": \"Tokyo Demographics\"}}", "seconds": 0.2417780586250018}
+{"id": "R0071", "output": "{\"function\": \"result_get\", \"parameters\": {\"appid\": \"your_api_key_here\", \"i\": \"capital of australia\"}}", "seconds": 0.2417780586250018}
+{"id": "R0072", "output": "{\n  \"function\": \"result_get\",\n  \"parameters\": {\n    \"appid\": \"your_app_id_here\",\n    \"i\": \"sqrt(256)\"\n  }\n}", "seconds": 0.2417780586250018}
+{"id": "R0073", "output": "{\n  \"function\": \"result_get\",\n  \"parameters\": {\n    \"appid\": \"your_api_appid_here\",\n    \"i\": \"Jupiter moons\"\n  }\n}", "seconds": 0.2417780586250018}
+{"id": "R0079", "output": "{\n  \"function\": \"result_get\",\n  \"parameters\": {\n    \"appid\": \"your_api_appid_here\",\n    \"i\": \"Los Angeles,New York\"\n  }\n}", "seconds": 0.2417780586250018}
+{"id": "R0080", "output": "{\"function\": \"getFruitByName\", \"parameters\": {\"name\": \"mango\"}}", "seconds": 0.2417780586250018}
+{"id": "R0081", "output": "{\"function\": \"getAllFruits\", \"parameters\": {}}", "seconds": 0.19517736699999944}
+{"id": "R0082", "output": "{\"function\": \"getFruitByFamily\", \"parameters\": {\"family\": \"Rosaceae\"}}", "seconds": 0.19517736699999944}
+{"id": "R0083", "output": "{\"function\": \"getFruitsByGenus\", \"parameters\": {\"genus\": \"Citrus\"}}", "seconds": 0.19517736699999944}
+{"id": "R0084", "output": "{\n  \"function\": \"getFruitsByOrder\",\n  \"parameters\": {\n    \"order\": \"Sapindales\"\n  }\n}", "seconds": 0.19517736699999944}
+{"id": "R0085", "output": "{\n  \"function\": \"getFruitsByOrder\",\n  \"parameters\": {\n    \"order\": \"Rosales\"\n  }\n}", "seconds": 0.19517736699999944}
+{"id": "R0086", "output": "{\"function\": \"getFruitsByGenus\", \"parameters\": {\"genus\": \"Citrus\"}}", "seconds": 0.19517736699999944}
+{"id": "R0087", "output": "{\"function\": \"getFruitByFamily\", \"parameters\": {\"family\": \"Solanaceae\"}}", "seconds": 0.19517736699999944}
+{"id": "R0088", "output": "{\"function\": \"getFruitByName\", \"parameters\": {\"name\": \"apple\"}}", "seconds": 0.19517736699999944}
+{"id": "R0089", "output": "{\"function\": \"getAllFruits\", \"parameters\": {}}", "seconds": 0.42311889387499946}
+{"id": "R0090", "output": "{\n  \"function\": \"getAllFruits\",\n  \"parameters\": {}\n}", "seconds": 0.42311889387499946}
+{"id": "R0091", "output": "{\"function\": \"getRandomCat\", \"parameters\": {\"width\": \"500\", \"height\": \"300\", \"json\": \"true\"}}", "seconds": 0.42311889387499946}
+{"id": "R0092", "output": "{\"function\": \"findCatByTag\", \"parameters\": {\"tag\": \"cute\", \"width\": \"800\", \"height\": \"600\", \"html\": null, \"json\": null}}", "seconds": 0.42311889387499946}
+{"id": "R0096", "output": "{\"function\": \"api\", \"parameters\": {\"limit\": 3}}", "seconds": 0.42311889387499946}
+{"id": "R0098", "output": "{\"function\": \"getRandomCat\", \"parameters\": {\"type\": \"tabby\", \"width\": \"500\", \"height\": \"300\"}}", "seconds": 0.42311889387499946}
+{"id": "R0100", "output": "{\"function\": \"findCatWithText\", \"parameters\": {\"text\": \"purr-fect party!\", \"type\": \"cat\", \"html\": \"true\"}}", "seconds": 0.42311889387499946}
+{"id": "R0101", "output": "{\"function\": \"getRandomCat\", \"parameters\": {\"html\": \"\", \"json\": \"\", \"width\": null, \"height\": null, \"type\": null}}", "seconds": 0.42311889387499946}
+{"id": "R0106", "output": "{\"function\": \"convert_get\", \"parameters\": {\"api_key\": \"your_api_key_here\", \"from\": \"EUR\", \"to\": \"USD\", \"amount\": \"500\"}}", "seconds": 0.35744793800000707}
+{"id": "R0107", "output": "{\"function\": \"latest_get\", \"parameters\": {\"api_key\": \"\", \"base\": \"USD\", \"symbols\": \"EUR,GBP\"}}", "seconds": 0.35744793800000707}
+{"id": "R0109", "output": "{\"function\": \"convert_get\", \"parameters\": {\"api_key\": \"your_api_key_here\", \"from\": \"USD\", \"to\": \"JPY\", \"amount\": \"1000\"}}", "seconds": 0.35744793800000707}
+{"id": "R0110", "output": "{\"function\": \"convert_get\", \"parameters\": {\"api_key\": \"your_api_key_here\", \"from\": \"USD\", \"to\": \"EUR\", \"amount\": \"200\"}}", "seconds": 0.35744793800000707}
+{"id": "R0112", "output": "{\"function\": \"latest_get\", \"parameters\": {\"api_key\": \"your_api_key_here\", \"base\": \"USD\", \"symbols\": \"JPY\"}}", "seconds": 0.35744793800000707}
+{"id": "R0114", "output": "{\"function\": \"getRandomAxolotlImage\", \"parameters\": {}}", "seconds": 0.35744793800000707}
+{"id": "R0115", "output": "{\"function\": \"searchAxolotlImages\", \"parameters\": {\"color\": \"wild\", \"size\": \"medium\"}}", "seconds": 0.35744793800000707}
+{"id": "R0116", "output": "{\"function\": \"getAxolotlFacts\", \"parameters\": {\"category\": \"habitat\", \"limit\": 3}}", "seconds": 0.35744793800000707}
+{"id": "R0117", "output": "{\"function\": \"getAxolotlFacts\", \"parameters\": {\"category\": \"physical characteristics\"}}", "seconds": 0.2690533600000009}
+{"id": "R0118", "output": "{\"function\": \"getRandomAxolotlImage\", \"parameters\": {\"color\": \"albino\"}}", "seconds": 0.2690533600000009}
+{"id": "R0119", "output": "{\n  \"function\": \"getAxolotlFacts\",\n  \"parameters\": {\n    \"category\": \"physical characteristics\",\n    \"limit\": 5\n  }\n}", "seconds": 0.2690533600000009}
+{"id": "R0120", "output": "{\"function\": \"searchAxolotlImages\", \"parameters\": {\"size\": \"small\", \"page\": 1}}", "seconds": 0.2690533600000009}
+{"id": "R0121", "output": "{\"function\": \"searchAxolotlImages\", \"parameters\": {\"color\": \"unique\", \"gender\": null, \"size\": null, \"page\": 1}}", "seconds": 0.2690533600000009}
+{"id": "R0122", "output": "{\n  \"function\": \"getAxolotlFacts\",\n  \"parameters\": {\n    \"category\": \"interesting\",\n    \"limit\": 1\n  }\n}", "seconds": 0.2690533600000009}
+{"id": "R0123", "output": "{\"function\": \"getAxolotlFacts\", \"parameters\": {\"category\": \"physical characteristics\", \"limit\": 2}}", "seconds": 0.2690533600000009}
+{"id": "R0124", "output": "{\"function\": \"getCastAndCrew\", \"parameters\": {\"animeId\": 1234567890}}", "seconds": 0.2690533600000009}
+{"id": "R0125", "output": "{\"function\": \"searchAnime\", \"parameters\": {\"query\": \"mystery action\", \"filters\": {\"genre\": \"Mystery\", \"action\"}, \"yearFrom\": 2020, \"yearTo\": 2020, \"minRating\": 4}}", "seconds": 0.3738176675000062}
+{"id": "R0126", "output": "{\"function\": \"getStreamingServices\", \"parameters\": {\"animeId\": 1234567890}}", "seconds": 0.3738176675000062}
+{"id": "R0127", "output": "{\"function\": \"getRecommendations\", \"parameters\": {\"animeId\": 1234567890}}", "seconds": 0.3738176675000062}
+{"id": "R0128", "output": "{\"function\": \"synchronizeTracking\", \"parameters\": {\"animeId\": 23456789, \"trackingService\": \"MyAnimeList\", \"progress\": 100}}", "seconds": 0.3738176675000062}
+{"id": "R0129", "output": "{\"function\": \"synchronizeTracking\", \"parameters\": {\"animeId\": 10874, \"progress\": 25}}", "seconds": 0.3738176675000062}
+{"id": "R0130", "output": "{\"function\": \"getAnimeDetails\", \"parameters\": {\"animeId\": 123456}}", "seconds": 0.3738176675000062}
+{"id": "R0131", "output": "{\n  \"function\": \"searchAnime\",\n  \"parameters\": {\n    \"query\": \"One Punch Man\"\n  }\n}", "seconds": 0.3738176675000062}
+{"id": "R0132", "output": "{\"function\": \"searchAnime\", \"parameters\": {\"query\": \"Death Note\", \"filters\": {\"genre\": \"thriller\", \"rating\": 8}}}", "seconds": 0.3738176675000062}
+{"id": "R0134", "output": "{\n  \"function\": \"reportAbusiveIP\",\n  \"parameters\": {\n    \"ip\": \"192.168.1.100\",\n    \"categories\": [\"brute-force\", \"DDoS\"],\n    \"comment\": \"Multiple failed login attempts and DDoS attacks.\"\n  }\n}", "seconds": 0.4518941643750054}
+{"id": "R0136", "output": "{\"function\": \"searchReports\", \"parameters\": {\"categories\": [\"DDoS\"], \"startDate\": \"2023-04-01\", \"endDate\": \"2023-05-01\", \"page\": 1, \"perPage\": 100}}", "seconds": 0.4518941643750054}
+{"id": "R0137", "output": "{\"function\": \"checkIPReputation\", \"parameters\": {\"ip\": \"192.168.2.200\", \"maxAgeInDays\": 90}}", "seconds": 0.4518941643750054}
+{"id": "R0138", "output": "{\"function\": \"searchReports\", \"parameters\": {\"ip\": null, \"categories\": [], \"startDate\": \"2023-04-01\", \"endDate\": \"2023-04-08\", \"page\": 1, \"perPage\": 10}}", "seconds": 0.4518941643750054}
+{"id": "R0140", "output": "{\"function\": \"searchReports\", \"parameters\": {\"ip\": \"10.0.0.2\", \"startDate\": \"2022-07-01\", \"endDate\": \"2022-07-07\", \"page\": 1, \"perPage\": 20}}", "seconds": 0.4518941643750054}
+{"id": "R0145", "output": "{\"function\": \"generateAvatar\", \"parameters\": {\"userId\": \"123456789\", \"style\": \"grunge\", \"format\": \"png\"}}", "seconds": 0.4518941643750054}
+{"id": "R0149", "output": "{\"function\": \"listServerMembers\", \"parameters\": {\"serverId\": \"135792468\", \"limit\": 50, \"offset\": 10}}", "seconds": 0.4518941643750054}
+{"id": "R0152", "output": "{\"function\": \"generateAvatar\", \"parameters\": {\"userId\": \"321654987\", \"style\": \"minimal\", \"format\": \"jpg\"}}", "seconds": 0.4518941643750054}
+{"id": "R0153", "output": "{\"function\": \"searchUser\", \"parameters\": {\"query\": \"SolarWinds42\"}}", "seconds": 0.611841544750007}
+{"id": "R0154", "output": "{\"function\": \"generateAvatar\", \"parameters\": {\"userId\": \"JohnEve233\", \"style\": \"cute\", \"format\": \"jpg\"}}", "seconds": 0.611841544750007}
+{"id": "R0156", "output": "{\"function\": \"authenticateUser\", \"parameters\": {\"provider\": \"facebook\", \"email\": \"john.doe@gmail.com\", \"password\": \"Pa$$w0rd\"}}", "seconds": 0.611841544750007}
+{"id": "R0157", "output": "{\"function\": \"getUserProfile\", \"parameters\": {\"userId\": \"g-user123\", \"accessToken\": \"abcd1234\"}}", "seconds": 0.611841544750007}
+{"id": "R0158", "output": "{\"function\": \"updateUserProfile\", \"parameters\": {\"userId\": \"g-user123\", \"accessToken\": \"abcd1234\", \"profileData\": {\"image_url\": \"https://example.com/new_image.jpg\"}}}", "seconds": 0.611841544750007}
+{"id": "R0159", "output": "{\"function\": \"assignUserRole\", \"parameters\": {\"userId\": \"user321\", \"accessToken\": \"abcd1234\", \"roleId\": \"role123\"}}", "seconds": 0.611841544750007}
+{"id": "R0160", "output": "{\"function\": \"listRoles\", \"parameters\": {\"accessToken\": \"abcd1234\"}}", "seconds": 0.611841544750007}
+{"id": "R0161", "output": "{\n  \"function\": \"createRole\",\n  \"parameters\": {\n    \"accessToken\": \"abcd1234\",\n    \"roleName\": \"Content Moderator\",\n    \"permissions\": [\n      {\n        \"action\": \"edit\",\n        \"resource\": \"*\"\n      },\n      {\n        \"action\": \"delete\",\n        \"resource\": \"*\"\n      }\n    ]\n  }\n}", "seconds": 0.611841544750007}
+{"id": "R0162", "output": "{\"function\": \"deleteRole\", \"parameters\": {\"accessToken\": \"abcd1234\", \"roleId\": \"role456\"}}", "seconds": 0.43632029287499563}
+{"id": "R0163", "output": "{\n  \"function\": \"initiatePasswordlessAuthentication\",\n  \"parameters\": {\n    \"provider\": \"email\",\n    \"identifier\": \"jane.doe@example.com\"\n  }\n}", "seconds": 0.43632029287499563}
+{"id": "R0164", "output": "{\"function\": \"verifyPasswordlessAuthentication\", \"parameters\": {\"provider\": \"sms\", \"identifier\": \"+1234567890\", \"verificationCode\": \"123456\"}}", "seconds": 0.43632029287499563}
+{"id": "R0165", "output": "{\"function\": \"verifyPasswordlessAuthentication\", \"parameters\": {\"provider\": \"email\", \"identifier\": \"john.doe@gmail.com\", \"verificationCode\": \"456789\"}}", "seconds": 0.43632029287499563}
+{"id": "R0166", "output": "{\"function\": \"getUserProfile\", \"parameters\": {\"userId\": \"\", \"accessToken\": \"\"}}", "seconds": 0.43632029287499563}
+{"id": "R0167", "output": "{\"function\": \"getUserProfile\", \"parameters\": {\"userId\": \"g-user123\", \"accessToken\": \"abcd1234\"}}", "seconds": 0.43632029287499563}
+{"id": "R0168", "output": "{\n  \"function\": \"getHolidaysByCountry\",\n  \"parameters\": {\n    \"country\": \"Japan\",\n    \"year\": 2023,\n    \"language\": \"English\"\n  }\n}", "seconds": 0.43632029287499563}
+{"id": "R0169", "output": "{\"function\": \"getHolidayDetails\", \"parameters\": {\"holidayId\": \"BoxingDay\", \"language\": null}}", "seconds": 0.43632029287499563}
+{"id": "R0170", "output": "{\"function\": \"searchHolidays\", \"parameters\": {\"keywords\": \"Easter\", \"country\": \"Canada\", \"month\": 4}}", "seconds": 0.27617371387499645}
+{"id": "R0171", "output": "{\"function\": \"listCountries\", \"parameters\": {}}", "seconds": 0.27617371387499645}
+{"id": "R0172", "output": "{\"function\": \"listLanguages\", \"parameters\": {}}", "seconds": 0.27617371387499645}
+{"id": "R0173", "output": "{\"function\": \"searchHolidays\", \"parameters\": {\"keywords\": \"Diwali\", \"country\": \"\", \"startDate\": \"\", \"endDate\": \"\"}}", "seconds": 0.27617371387499645}
+{"id": "R0174", "output": "{\"function\": \"getHolidaysByCountry\", \"parameters\": {\"country\": \"Germany\"}}", "seconds": 0.27617371387499645}
+{"id": "R0175", "output": "{\n  \"function\": \"getHolidayDetails\",\n  \"parameters\": {\n    \"holidayId\": \"ChineseNewYear\",\n    \"language\": \"English\"\n  }\n}", "seconds": 0.27617371387499645}
+{"id": "R0176", "output": "{\"function\": \"listCountries\", \"parameters\": {}}", "seconds": 0.27617371387499645}
+{"id": "R0177", "output": "{\"function\": \"listLanguages\", \"parameters\": {}}", "seconds": 0.27617371387499645}
+{"id": "R0178", "output": "{\"function\": \"getHolidayDetails\", \"parameters\": {\"holidayId\": \"IcelandicFestivals\", \"language\": \"English\"}}", "seconds": 0.32808307649999335}
+{"id": "R0179", "output": "{\n  \"function\": \"getExchangeRates\",\n  \"parameters\": {\n    \"base\": \"USD\"\n  }\n}", "seconds": 0.32808307649999335}
+{"id": "R0180", "output": "{\n  \"function\": \"convertCurrency\",\n  \"parameters\": {\n    \"from\": \"EUR\",\n    \"to\": \"GBP\",\n    \"amount\": 5000\n  }\n}", "seconds": 0.32808307649999335}
+{"id": "R0181", "output": "{\n  \"function\": \"getQuotes\",\n  \"parameters\": {\n    \"symbols\": \"XAU,XBT\"\n  }\n}", "seconds": 0.32808307649999335}
+{"id": "R0182", "output": "{\n  \"function\": \"getExchangeRates\",\n  \"parameters\": {\n    \"base\": \"USD\"\n  }\n}", "seconds": 0.32808307649999335}
+{"id": "R0183", "output": "{\"function\": \"convertCurrency\", \"parameters\": {\"from\": \"AUD\", \"to\": \"NZD\", \"amount\": 1000}}", "seconds": 0.32808307649999335}
+{"id": "R0184", "output": "{\n  \"function\": \"getHistoricalData\",\n  \"parameters\": {\n    \"currency_pair\": \"EUR/USD\",\n    \"start_date\": \"2023-06-01\"\n  }\n}", "seconds": 0.32808307649999335}
+{"id": "R0185", "output": "{\n  \"function\": \"getQuotes\",\n  \"parameters\": {\n    \"symbols\": \"XAG,XETH\"\n  }\n}", "seconds": 0.32808307649999335}
+{"id": "R0186", "output": "{\n  \"function\": \"convertCurrency\",\n  \"parameters\": {\n    \"from\": \"CHF\",\n    \"to\": \"USD\",\n    \"amount\": 3000\n  }\n}", "seconds": 0.36134687474999794}
+{"id": "R0187", "output": "{\n  \"function\": \"getExchangeRates\",\n  \"parameters\": {\n    \"base\": \"GBP\",\n    \"symbols\": \"USD,EUR,JPY\"\n  }\n}", "seconds": 0.36134687474999794}
+{"id": "R0188", "output": "{\"function\": \"convertCurrency\", \"parameters\": {\"from\": \"SEK\", \"to\": \"NOK\", \"amount\": 2000}}", "seconds": 0.36134687474999794}
+{"id": "R0189", "output": "{\"function\": \".getBibleVersionList\", \"parameters\": {\"language\": \"en\"}}", "seconds": 0.36134687474999794}
+{"id": "R0190", "output": "{\"function\": \"getAllVersesFromChapter\", \"parameters\": {\"book\": \"Job\", \"chapter\": 3, \"version\": \"New International Version\"}}", "seconds": 0.36134687474999794}
+{"id": "R0191", "output": "{\"function\": \"getSpecificVerse\", \"parameters\": {\"book\": \"Proverbs\", \"chapter\": 18, \"verse\": 24}}", "seconds": 0.36134687474999794}
+{"id": "R0192", "output": "{\"function\": \"getSpecificVerse\", \"parameters\": {\"book\": \"Romans\", \"chapter\": 8, \"verse\": 35, \"version\": \"New American Standard Bible\", \"language\": \"\"}}", "seconds": 0.36134687474999794}
+{"id": "R0193", "output": "{\"function\": \"getSpecificVerse\", \"parameters\": {\"book\": \"Revelation\", \"chapter\": 22, \"verse\": 17, \"version\": \"New Living Translation\"}}", "seconds": 0.36134687474999794}
+{"id": "R0194", "output": "{\"function\": \"getSpecificVerse\", \"parameters\": {\"book\": \"Ephesians\", \"chapter\": 6, \"verse\": 10, \"version\": \"King James Version\"}}", "seconds": 0.5396502703749917}
+{"id": "R0195", "output": "{\"function\": \"getSpecificVerse\", \"parameters\": {\"book\": \"John\", \"chapter\": 3, \"verse\": 16, \"version\": \"King James Version\", \"language\": \"English\"}}", "seconds": 0.5396502703749917}
+{"id": "R0196", "output": "{\"function\": \"searchVerses\", \"parameters\": {\"text\": \"Love is patient, love is kind\", \"version\": \"New International Version\", \"language\": \"English\"}}", "seconds": 0.5396502703749917}
+{"id": "R0197", "output": "{\"function\": \"getBibleLanguages\", \"parameters\": {}}", "seconds": 0.5396502703749917}
+{"id": "R0198", "output": "{\"function\": \"updateDataSource\", \"parameters\": {\"sourceId\": 85, \"sourceName\": \"Updated Sales Data\", \"connectionString\": \"postgres://user:password@newhost/dbname\"}}", "seconds": 0.5396502703749917}
+{"id": "R0200", "output": "{\"function\": \"createDashboard\", \"parameters\": {\"dashboardName\": \"Sales Overview\", \"charts\": [{\"title\": \"Quarterly Sales\", \"type\": \"line\"}, {\"title\": \"Product Category Sales\", \"type\": \"bar\"}, {\"title\": \"Regional Sales\", \"type\": \"pie\"}]}}", "seconds": 0.5396502703749917}
+{"id": "R0208", "output": "{\"function\": \"createDashboard\", \"parameters\": {\"dashboardName\": \"Customer Analytics\", \"charts\": [\"Customer Segmentation\", \"Churn Rate\", \"Lifetime Value\"]}}", "seconds": 0.5396502703749917}
+{"id": "R0210", "output": "{\"function\": \"standardizeUSAddress\", \"parameters\": {\"addressLine1\": \"456 Elm Street\", \"addressLine2\": \"Suite 789\", \"city\": \"Los Angeles\", \"state\": \"CA\", \"zipCode\": \"90012\"}}", "seconds": 0.5396502703749917}
+{"id": "R0211", "output": "{\"function\": \"verifyUSAddress\", \"parameters\": {\"addressLine1\": \"987 Oak St\", \"addressLine2\": \"\", \"city\": \"San Francisco\", \"state\": \"CA\", \"zipCode\": \"94107\"}}", "seconds": 1.4066497685000172}
+{"id": "R0213", "output": "{\n  \"function\": \"verifyUSAddress\",\n  \"parameters\": {\n    \"addressLine1\": \"321 Maple Dr\",\n    \"addressLine2\": \"Apt 12C\",\n    \"city\": \"Houston\",\n    \"state\": \"TX\",\n    \"zipCode\": \"77002\"\n  }\n}", "seconds": 1.4066497685000172}

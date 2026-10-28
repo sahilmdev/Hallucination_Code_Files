@@ -1,0 +1,23 @@
+\begin{table}[t]
+\centering
+\caption{Detection: schema-only vs baselines (function-disjoint test split)}
+\label{tab:baselines_detection_function_disjoint}
+\begin{tabular}{lrrrrrr}
+\hline
+method & deployable & bal. acc & F1 & FPR & FNR & macro-F1 \\
+\hline
+exact\_match\_normalised & no & 0.918 & 0.911 & 0.000 & 0.164 &  \\
+exact\_match\_raw & no & 1.000 & 1.000 & 0.000 & 0.000 &  \\
+token\_f1 & no & 0.917 & 0.910 & 0.000 & 0.166 &  \\
+function\_match & no & 0.584 & 0.287 & 0.000 & 0.833 &  \\
+param\_set\_match & no & 0.667 & 0.501 & 0.000 & 0.666 &  \\
+nli\_normalised & no & 0.813 & 0.775 & 0.009 & 0.365 &  \\
+nli\_raw\_json & no & 0.799 & 0.755 & 0.014 & 0.388 &  \\
+bertscore\_f1 & no & 0.918 & 0.911 & 0.000 & 0.164 &  \\
+JSON Schema validation & yes & 0.861 & 0.884 & 0.127 & 0.151 & 0.801 \\
+schema-only (ours) & yes & 0.910 & 0.907 & 0.016 & 0.163 & 0.830 \\
+LLM verifier (subset n=350) & yes & 0.540 & 0.697 & 0.500 & 0.420 & 0.114 \\
+schema-only on that subset & yes & 0.898 & 0.908 & 0.040 & 0.163 &  \\
+\hline
+\end{tabular}
+\end{table}

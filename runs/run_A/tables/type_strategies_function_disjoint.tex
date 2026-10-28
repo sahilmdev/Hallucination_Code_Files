@@ -1,0 +1,24 @@
+\begin{table}[t]
+\centering
+\caption{Type-checking strategies (function-disjoint)}
+\label{tab:type_strategies_function_disjoint}
+\begin{tabular}{lrrrr}
+\hline
+strategy & FPR & WRONG\_TYPE recall & det. F1 & exact \\
+\hline
+off & 0.000 & 0.000 & 0.799 & 0.676 \\
+strict & 0.040 & 1.000 & 0.903 & 0.766 \\
+skiplist & 0.040 & 1.000 & 0.903 & 0.766 \\
+adaptive tau=0.0 & 0.040 & 1.000 & 0.903 & 0.766 \\
+adaptive tau=0.2 & 0.021 & 1.000 & 0.907 & 0.774 \\
+adaptive tau=0.4 & 0.021 & 1.000 & 0.907 & 0.774 \\
+adaptive tau=0.5 & 0.017 & 0.986 & 0.907 & 0.775 \\
+adaptive tau=0.6 & 0.016 & 0.981 & 0.907 & 0.775 \\
+adaptive tau=0.7 & 0.016 & 0.981 & 0.907 & 0.775 \\
+adaptive tau=0.8 & 0.010 & 0.721 & 0.880 & 0.749 \\
+adaptive tau=0.9 & 0.010 & 0.716 & 0.879 & 0.749 \\
+adaptive tau=0.95 & 0.010 & 0.716 & 0.879 & 0.749 \\
+adaptive tau=1.0 & 0.010 & 0.635 & 0.870 & 0.740 \\
+\hline
+\end{tabular}
+\end{table}

@@ -1,0 +1,6 @@
+method,exact match
+no correction (block flagged calls),0.35570469798657717
+similarity-only correction,0.6592669075890553
+schema-only (ours),0.774909654104285
+LLM corrector (subset),0.20285714285714285
+schema-only on that subset,0.6971428571428572

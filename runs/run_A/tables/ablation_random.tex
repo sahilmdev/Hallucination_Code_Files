@@ -1,0 +1,32 @@
+\begin{table}[t]
+\centering
+\caption{Ablation (random test split)}
+\label{tab:ablation_random}
+\begin{tabular}{lrrrr}
+\hline
+variant & det. F1 & exact & Δ exact & McNemar p \\
+\hline
+full & 0.904 & 0.766 & 0.000 &  \\
+detect\_only (no correction) & 0.904 & 0.345 & -0.421 & 0.000 \\
+single correction pass & 0.904 & 0.766 & 0.000 & 1.000 \\
+max passes = 1 & 0.904 & 0.766 & 0.000 & 1.000 \\
+max passes = 2 & 0.904 & 0.762 & -0.004 & 0.008 \\
+max passes = 3 & 0.904 & 0.762 & -0.004 & 0.008 \\
+max passes = 5 & 0.904 & 0.762 & -0.004 & 0.008 \\
+max passes = 8 & 0.904 & 0.762 & -0.004 & 0.008 \\
+fix all violations per pass & 0.904 & 0.764 & -0.003 & 0.062 \\
+no type check & 0.800 & 0.672 & -0.094 & 0.000 \\
+type check strict (no calibration) & 0.903 & 0.762 & -0.004 & 0.008 \\
+type check skip-list (old method) & 0.903 & 0.763 & -0.003 & 0.109 \\
+no format check & 0.799 & 0.662 & -0.105 & 0.000 \\
+no format fix & 0.904 & 0.662 & -0.105 & 0.000 \\
+no function correction & 0.904 & 0.666 & -0.101 & 0.000 \\
+no extra-param removal & 0.904 & 0.659 & -0.107 & 0.000 \\
+no missing-param fill & 0.904 & 0.766 & 0.000 & 1.000 \\
+no type cast & 0.904 & 0.672 & -0.094 & 0.000 \\
+matcher: edit distance only & 0.904 & 0.767 & 0.001 & 0.688 \\
+matcher: semantic only & 0.904 & 0.754 & -0.012 & 0.000 \\
++ query grounding (schema+query) & 0.849 & 0.529 & -0.238 & 0.000 \\
+\hline
+\end{tabular}
+\end{table}

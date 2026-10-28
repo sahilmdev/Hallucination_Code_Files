@@ -1,0 +1,16 @@
+\begin{table}[t]
+\centering
+\caption{Correction: schema-only vs baselines (function-disjoint test split)}
+\label{tab:baselines_correction_function_disjoint}
+\begin{tabular}{lr}
+\hline
+method & exact match \\
+\hline
+no correction (block flagged calls) & 0.356 \\
+similarity-only correction & 0.659 \\
+schema-only (ours) & 0.775 \\
+LLM corrector (subset) & 0.203 \\
+schema-only on that subset & 0.697 \\
+\hline
+\end{tabular}
+\end{table}

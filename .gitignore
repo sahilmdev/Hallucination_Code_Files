@@ -1,0 +1,16 @@
+# Regenerable or large files
+*.npz
+cache/function_embeddings_*
+data/raw/
+*.pt
+*.bin
+*.safetensors
+
+# Notebook / Python clutter
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+
+# Secrets
+.env
+*.token

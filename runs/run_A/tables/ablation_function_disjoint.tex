@@ -1,0 +1,32 @@
+\begin{table}[t]
+\centering
+\caption{Ablation (function-disjoint test split)}
+\label{tab:ablation_function_disjoint}
+\begin{tabular}{lrrrr}
+\hline
+variant & det. F1 & exact & Δ exact & McNemar p \\
+\hline
+full & 0.907 & 0.775 & 0.000 &  \\
+detect\_only (no correction) & 0.907 & 0.356 & -0.419 & 0.000 \\
+single correction pass & 0.907 & 0.775 & 0.000 & 1.000 \\
+max passes = 1 & 0.907 & 0.775 & 0.000 & 1.000 \\
+max passes = 2 & 0.907 & 0.772 & -0.003 & 0.031 \\
+max passes = 3 & 0.907 & 0.772 & -0.003 & 0.031 \\
+max passes = 5 & 0.907 & 0.772 & -0.003 & 0.031 \\
+max passes = 8 & 0.907 & 0.772 & -0.003 & 0.031 \\
+fix all violations per pass & 0.907 & 0.773 & -0.002 & 0.125 \\
+no type check & 0.799 & 0.676 & -0.099 & 0.000 \\
+type check strict (no calibration) & 0.903 & 0.766 & -0.009 & 0.001 \\
+type check skip-list (old method) & 0.903 & 0.766 & -0.009 & 0.001 \\
+no format check & 0.802 & 0.672 & -0.103 & 0.000 \\
+no format fix & 0.907 & 0.672 & -0.103 & 0.000 \\
+no function correction & 0.907 & 0.673 & -0.102 & 0.000 \\
+no extra-param removal & 0.907 & 0.667 & -0.108 & 0.000 \\
+no missing-param fill & 0.907 & 0.775 & 0.000 & 1.000 \\
+no type cast & 0.907 & 0.676 & -0.099 & 0.000 \\
+matcher: edit distance only & 0.907 & 0.774 & -0.001 & 1.000 \\
+matcher: semantic only & 0.907 & 0.756 & -0.019 & 0.000 \\
++ query grounding (schema+query) & 0.848 & 0.537 & -0.237 & 0.000 \\
+\hline
+\end{tabular}
+\end{table}

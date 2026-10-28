@@ -1,0 +1,18 @@
+\begin{table}[t]
+\centering
+\caption{Latency per call (Intel(R) Xeon(R) CPU @ 2.20GHz)}
+\label{tab:runtime}
+\begin{tabular}{lrrrr}
+\hline
+component & mean ms & p50 ms & p95 ms & p99 ms \\
+\hline
+random: validate & 0.019 & 0.016 & 0.038 & 0.061 \\
+random: correct & 2.757 & 0.036 & 24.462 & 28.854 \\
+random: total & 2.776 & 0.045 & 24.477 & 28.870 \\
+function\_disjoint: validate & 0.022 & 0.016 & 0.038 & 0.064 \\
+function\_disjoint: correct & 4.085 & 0.039 & 34.892 & 59.260 \\
+function\_disjoint: total & 4.107 & 0.049 & 34.907 & 59.706 \\
+function matcher (per WRONG\_FUNCTION call) & 25.685 & 24.738 & 31.281 & 50.330 \\
+\hline
+\end{tabular}
+\end{table}

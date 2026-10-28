@@ -1,0 +1,23 @@
+\begin{table}[t]
+\centering
+\caption{Detection: schema-only vs baselines (random test split)}
+\label{tab:baselines_detection_random}
+\begin{tabular}{lrrrrrr}
+\hline
+method & deployable & bal. acc & F1 & FPR & FNR & macro-F1 \\
+\hline
+exact\_match\_normalised & no & 0.917 & 0.909 & 0.000 & 0.167 &  \\
+exact\_match\_raw & no & 1.000 & 1.000 & 0.000 & 0.000 &  \\
+token\_f1 & no & 0.915 & 0.907 & 0.000 & 0.171 &  \\
+function\_match & no & 0.583 & 0.286 & 0.000 & 0.833 &  \\
+param\_set\_match & no & 0.667 & 0.500 & 0.000 & 0.667 &  \\
+nli\_normalised & no & 0.805 & 0.768 & 0.020 & 0.370 &  \\
+nli\_raw\_json & no & 0.796 & 0.755 & 0.021 & 0.386 &  \\
+bertscore\_f1 & no & 0.917 & 0.909 & 0.000 & 0.167 &  \\
+JSON Schema validation & yes & 0.863 & 0.886 & 0.123 & 0.151 & 0.802 \\
+schema-only (ours) & yes & 0.904 & 0.904 & 0.033 & 0.160 & 0.827 \\
+LLM verifier (subset n=350) & yes & 0.580 & 0.731 & 0.460 & 0.380 & 0.113 \\
+schema-only on that subset & yes & 0.903 & 0.914 & 0.040 & 0.153 &  \\
+\hline
+\end{tabular}
+\end{table}

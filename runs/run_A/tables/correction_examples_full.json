@@ -1,0 +1,524 @@
+{
+ "synthetic": [
+  {
+   "id": "S02438",
+   "true_type": "WRONG_FUNCTION",
+   "outcome": "success",
+   "category": "OK_CORRECTED_EXACT",
+   "query": "I'm looking for YouTube influencers who create content in the food and cooking niche. Can you fetch me the results for search id 5? I'm particularly interested in the channel titles, subscribers count, and topic categories of each influencer.",
+   "generated": {
+    "function": "get_YouTube Influencer Search.getSearchResults",
+    "parameters": {
+     "id": "5"
+    }
+   },
+   "reference": {
+    "function": "YouTube Influencer Search.getSearchResults",
+    "parameters": {
+     "id": "5"
+    }
+   },
+   "final": {
+    "function": "YouTube Influencer Search.getSearchResults",
+    "parameters": {
+     "id": "5"
+    }
+   },
+   "detected_as": [
+    "WRONG_FUNCTION"
+   ],
+   "actions": [
+    "function 'get_YouTube Influencer Search.getSearchResults' -> 'YouTube Influencer Search.getSearchResults'"
+   ]
+  },
+  {
+   "id": "S02268",
+   "true_type": "WRONG_FUNCTION",
+   "outcome": "failure",
+   "category": "CORRECTION_INCOMPLETE",
+   "query": "My company is interested in investing in cryptocurrencies and we need to check the balance of a specific wallet address on a particular blockchain. Could you provide us with an API that retrieves the wallet balance in USD? Additionally, it would be helpful to get the wallet transfers for the same ad",
+   "generated": {
+    "function": "DeFi Watch.NonExistent",
+    "parameters": {
+     "address": "",
+     "chain": ""
+    }
+   },
+   "reference": {
+    "function": "DeFi Watch.WALLETS -> BALANCE BY CHAIN",
+    "parameters": {
+     "address": "",
+     "chain": ""
+    }
+   },
+   "final": {
+    "function": "DeFi Watch.NonExistent",
+    "parameters": {
+     "address": "",
+     "chain": ""
+    }
+   },
+   "detected_as": [
+    "WRONG_FUNCTION"
+   ],
+   "actions": []
+  },
+  {
+   "id": "S01910",
+   "true_type": "EXTRA_PARAMETER",
+   "outcome": "success",
+   "category": "OK_CORRECTED_EXACT",
+   "query": "Retrieve the contact details for a specific tag with ID 456.",
+   "generated": {
+    "function": "ChurchApp.Search Contacts",
+    "parameters": {
+     "q": "",
+     "name": "",
+     "p": "",
+     "per_page": "",
+     "max_results": 10
+    }
+   },
+   "reference": {
+    "function": "ChurchApp.Search Contacts",
+    "parameters": {
+     "q": "",
+     "name": "",
+     "p": "",
+     "per_page": ""
+    }
+   },
+   "final": {
+    "function": "ChurchApp.Search Contacts",
+    "parameters": {
+     "q": "",
+     "name": "",
+     "p": "",
+     "per_page": ""
+    }
+   },
+   "detected_as": [
+    "EXTRA_PARAMETER"
+   ],
+   "actions": [
+    "removed undeclared 'max_results'"
+   ]
+  },
+  {
+   "id": "S01272",
+   "true_type": "WRONG_TYPE",
+   "outcome": "success",
+   "category": "OK_CORRECTED_EXACT",
+   "query": "I'm a collector and I want to explore the NFTs created by a specific user. Can you scrape all the HTML information from the NFT asset page for the user 'Luciusl'? It would be helpful to retrieve the user information such as images and metadata. Additionally, I would like to retrieve the collection i",
+   "generated": {
+    "function": "Opensea_v2.Retrieve collection stats",
+    "parameters": {
+     "collection_slug": [
+      "doodles-official"
+     ]
+    }
+   },
+   "reference": {
+    "function": "Opensea_v2.Retrieve collection stats",
+    "parameters": {
+     "collection_slug": "doodles-official"
+    }
+   },
+   "final": {
+    "function": "Opensea_v2.Retrieve collection stats",
+    "parameters": {
+     "collection_slug": "doodles-official"
+    }
+   },
+   "detected_as": [
+    "WRONG_TYPE"
+   ],
+   "actions": [
+    "cast 'collection_slug' -> string"
+   ]
+  },
+  {
+   "id": "S01211",
+   "true_type": "WRONG_TYPE",
+   "outcome": "failure",
+   "category": "CORRECTION_INCOMPLETE",
+   "query": "Please provide me with the shipping details of the item with ID 3256804591426248. I would also like to know the store information of the seller with ID 231651707.",
+   "generated": {
+    "function": "Aliexpress DataHub.Aliexpress - Item Shipping Detail",
+    "parameters": {
+     "itemId": "3256804591426248",
+     "quantity": "1",
+     "sellerId": "",
+     "ext": "bVkg9vW8ihgAMt4XYtZhMB3rnoY6MGI8Sk1gfrl4IGWuBdZZb0gRv5vgI1r5DIn8Rj7mxVzOKbKpyHkmBItRm_k2dtJ1j_gHLTu5zNN9jXHeQploYHEajpnygmD_xKGbi9I_HzxO8TtoIpwdvl5ZfH6o_x5qCBy5D1cUo6t7LoDhx7UTHmFDiCHY0PpHokfJ",
+     "locale": "",
+     "region": "",
+     "currency": ""
+    }
+   },
+   "reference": {
+    "function": "Aliexpress DataHub.Aliexpress - Item Shipping Detail",
+    "parameters": {
+     "itemId": "3256804591426248",
+     "quantity": 1,
+     "sellerId": "",
+     "ext": "bVkg9vW8ihgAMt4XYtZhMB3rnoY6MGI8Sk1gfrl4IGWuBdZZb0gRv5vgI1r5DIn8Rj7mxVzOKbKpyHkmBItRm_k2dtJ1j_gHLTu5zNN9jXHeQploYHEajpnygmD_xKGbi9I_HzxO8TtoIpwdvl5ZfH6o_x5qCBy5D1cUo6t7LoDhx7UTHmFDiCHY0PpHokfJ",
+     "locale": "",
+     "region": "",
+     "currency": ""
+    }
+   },
+   "final": {
+    "function": "Aliexpress DataHub.Aliexpress - Item Shipping Detail",
+    "parameters": {
+     "itemId": 3256804591426248,
+     "quantity": "1",
+     "sellerId": "",
+     "ext": "bVkg9vW8ihgAMt4XYtZhMB3rnoY6MGI8Sk1gfrl4IGWuBdZZb0gRv5vgI1r5DIn8Rj7mxVzOKbKpyHkmBItRm_k2dtJ1j_gHLTu5zNN9jXHeQploYHEajpnygmD_xKGbi9I_HzxO8TtoIpwdvl5ZfH6o_x5qCBy5D1cUo6t7LoDhx7UTHmFDiCHY0PpHokfJ",
+     "locale": "",
+     "region": "",
+     "currency": ""
+    }
+   },
+   "detected_as": [
+    "WRONG_TYPE"
+   ],
+   "actions": [
+    "cast 'itemId' -> number"
+   ]
+  },
+  {
+   "id": "S01681",
+   "true_type": "WRONG_VALUE",
+   "outcome": "failure",
+   "category": "MISSED_DETECTION",
+   "query": "I need to find a specific product offer from a particular store. Can you search for product offers using the Search API and filter the results by store ID? The store ID I'm looking for is 'g9876543'. Also, it would be great if you could provide me with the product reviews for the selected offer usin",
+   "generated": {
+    "function": "Real-Time Product Search.Search",
+    "parameters": {
+     "q": "49.597, -8.19",
+     "store_id": "",
+     "sort_by": "",
+     "max_shipping_days": "",
+     "page": "",
+     "on_sale": "",
+     "product_condition": "",
+     "free_shipping": "",
+     "language": "en",
+     "country": "us",
+     "free_returns": "",
+     "max_price": "",
+     "min_price": ""
+    }
+   },
+   "reference": {
+    "function": "Real-Time Product Search.Search",
+    "parameters": {
+     "q": "Nike shoes",
+     "store_id": "",
+     "sort_by": "",
+     "max_shipping_days": "",
+     "page": "",
+     "on_sale": "",
+     "product_condition": "",
+     "free_shipping": "",
+     "language": "en",
+     "country": "us",
+     "free_returns": "",
+     "max_price": "",
+     "min_price": ""
+    }
+   },
+   "final": {
+    "function": "Real-Time Product Search.Search",
+    "parameters": {
+     "q": "49.597, -8.19",
+     "store_id": "",
+     "sort_by": "",
+     "max_shipping_days": "",
+     "page": "",
+     "on_sale": "",
+     "product_condition": "",
+     "free_shipping": "",
+     "language": "en",
+     "country": "us",
+     "free_returns": "",
+     "max_price": "",
+     "min_price": ""
+    }
+   },
+   "detected_as": [],
+   "actions": []
+  },
+  {
+   "id": "S01376",
+   "true_type": "MISSING_PARAMETER",
+   "outcome": "failure",
+   "category": "SCHEMA_VALID_PLACEHOLDER_VALUE",
+   "query": "My family is interested in purchasing mobile devices. Could you provide us with a list of brands, their devices, and relevant images? It would be helpful if we could search for specific devices and get their details as well.",
+   "generated": {
+    "function": "Mobile-Phones.Get Devices Details",
+    "parameters": {}
+   },
+   "reference": {
+    "function": "Mobile-Phones.Get Devices Details",
+    "parameters": {
+     "device_id": 725
+    }
+   },
+   "final": {
+    "function": "Mobile-Phones.Get Devices Details",
+    "parameters": {
+     "device_id": 0.0
+    }
+   },
+   "detected_as": [
+    "MISSING_PARAMETER"
+   ],
+   "actions": [
+    "inserted 'device_id' = number placeholder"
+   ]
+  },
+  {
+   "id": "S02552",
+   "true_type": "WRONG_FORMAT",
+   "outcome": "success",
+   "category": "OK_CORRECTED_EXACT",
+   "query": "User: Can you compare the prices of Aspirin and Tylenol for me?\nAI: Sure, I can help you. What is the name of the first medication?\nUser: Aspirin.\nAI: And what is the name of the second medication?\nUser: Tylenol.\nGenerate API Request:",
+   "generated": {
+    "function_name": "compare_prices",
+    "function_params": {
+     "medication1": "Aspirin",
+     "medication2": "Tylenol"
+    }
+   },
+   "reference": {
+    "function": "compare_prices",
+    "parameters": {
+     "medication1": "Aspirin",
+     "medication2": "Tylenol"
+    }
+   },
+   "final": {
+    "function": "compare_prices",
+    "parameters": {
+     "medication1": "Aspirin",
+     "medication2": "Tylenol"
+    }
+   },
+   "detected_as": [
+    "WRONG_FORMAT"
+   ],
+   "actions": [
+    "restructured envelope to {function, parameters}"
+   ]
+  },
+  {
+   "id": "S02515",
+   "true_type": "WRONG_FORMAT",
+   "outcome": "failure",
+   "category": "SCHEMA_VALID_NOT_EXACT",
+   "query": "I want to analyze the engagement of a specific video. Please provide me with the analytics data for video ID 'abcd1234'. Additionally, fetch the session ID events for the same video.",
+   "generated": {
+    "type": "function",
+    "function": {
+     "name": "api.video.GET_analytics-videos-videoId",
+     "arguments": "{\"videoId\": \"\", \"metadata\": \"[]\", \"period\": \"\", \"currentPage\": 1, \"pageSize\": 25}"
+    }
+   },
+   "reference": {
+    "function": "api.video.GET_analytics-videos-videoId",
+    "parameters": {
+     "videoId": "",
+     "metadata": "[]",
+     "period": "",
+     "currentPage": 1,
+     "pageSize": 25
+    }
+   },
+   "final": {
+    "function": "api.video.GET_analytics-videos-videoId",
+    "parameters": {
+     "videoId": "",
+     "metadata": [],
+     "period": "",
+     "currentPage": 1,
+     "pageSize": 25
+    }
+   },
+   "detected_as": [
+    "WRONG_FORMAT",
+    "WRONG_TYPE"
+   ],
+   "actions": [
+    "restructured envelope to {function, parameters}",
+    "cast 'metadata' -> array"
+   ]
+  }
+ ],
+ "real": [
+  {
+   "id": "R0007",
+   "model": "Qwen/Qwen2.5-0.5B-Instruct",
+   "group": "corrected (wrong -> exact)",
+   "query": "Get the upcoming public holidays worldwide for the next 7 days.",
+   "generated": "{\"name\": \"PublicHolidayNextPublicHolidaysWorldwide\"}",
+   "final": {
+    "function": "PublicHolidayNextPublicHolidaysWorldwide",
+    "parameters": {}
+   },
+   "gold": {
+    "function": "PublicHolidayNextPublicHolidaysWorldwide",
+    "parameters": {}
+   },
+   "auto_labels": [
+    "WRONG_FORMAT"
+   ]
+  },
+  {
+   "id": "R0038",
+   "model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+   "group": "corrected (wrong -> exact)",
+   "query": "I'm having a party tonight and want to entertain my guests with some Chuck Norris jokes. Can you find a random joke for me to tell them?",
+   "generated": "Response: Here's an example JSON object for the \"jokes_random_get\" function:\n\n```\n{\n  \"function\": \"jokes_random_get\",\n  \"parameters\": {\n    \"category\": {\n      \"type\": \"string\",\n      \"required\": false,\n      \"description\": \"The category from which to fetch the random joke.\"\n    }\n  }\n}\n```\n\nThis JSON object specifies that the \"category\" parameter is required and of type \"string\". The \"category\" p",
+   "final": {
+    "function": "jokes_random_get",
+    "parameters": {}
+   },
+   "gold": {
+    "function": "jokes_random_get",
+    "parameters": {}
+   },
+   "auto_labels": [
+    "EXTRA_PARAMETER"
+   ]
+  },
+  {
+   "id": "R0013",
+   "model": "Qwen/Qwen2.5-3B-Instruct",
+   "group": "flagged, not fixed",
+   "query": "I'm planning a road trip across Europe. Can you provide me with information about Italy, including its common name, official name, and the countries it shares borders with?",
+   "generated": "{\"function\": \"CountryAvailableCountries\", \"parameters\": {\"countryCode\": \"IT\"}}",
+   "final": {
+    "function": "CountryAvailableCountries",
+    "parameters": {}
+   },
+   "gold": {
+    "function": "CountryCountryInfo",
+    "parameters": {
+     "countryCode": "IT"
+    }
+   },
+   "auto_labels": [
+    "WRONG_FUNCTION"
+   ]
+  },
+  {
+   "id": "R0175",
+   "model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+   "group": "flagged, not fixed",
+   "query": "I am curious about how the Chinese New Year is celebrated. Could you find the detailed information about the holiday, including its history, purpose, and traditions?",
+   "generated": "Response: Sure, I'd be happy to provide you with the detailed information about the Chinese New Year holiday.\n\nAvailable Function: \"getHolidayDetails\"\n\nParameters:\n- holidayId: The unique identifier of the holiday for which detailed information is to be retrieved.\n- language: The language in which holiday descriptions should be returned.\n\nResponse:\n\nResponse: {\"holidayDetails\": {\"holidayId\": \"2021",
+   "final": null,
+   "gold": {
+    "function": "getHolidayDetails",
+    "parameters": {
+     "holidayId": "chinese-new-year"
+    }
+   },
+   "auto_labels": [
+    "WRONG_FORMAT"
+   ]
+  },
+  {
+   "id": "R0109",
+   "model": "Qwen/Qwen2.5-3B-Instruct",
+   "group": "missed (semantic error)",
+   "query": "I'm planning a trip to Japan next month. Could you find out how much 1000 US dollars would be in Japanese yen using the current exchange rate?",
+   "generated": "{\"function\": \"convert_get\", \"parameters\": {\"api_key\": \"mySecretApiKey\", \"from\": \"USD\", \"to\": \"JPY\", \"amount\": \"1000\"}}",
+   "final": {
+    "function": "convert_get",
+    "parameters": {
+     "api_key": "mySecretApiKey",
+     "from": "USD",
+     "to": "JPY",
+     "amount": "1000"
+    }
+   },
+   "gold": {
+    "function": "convert_get",
+    "parameters": {
+     "api_key": "8BbG6gN9g3Y29h5EMMSEw6avX0c1LYkw",
+     "from": "USD",
+     "to": "JPY",
+     "amount": 1000
+    }
+   },
+   "auto_labels": [
+    "WRONG_TYPE",
+    "WRONG_VALUE"
+   ]
+  },
+  {
+   "id": "R0127",
+   "model": "Qwen/Qwen2.5-0.5B-Instruct",
+   "group": "missed (semantic error)",
+   "query": "I just finished watching \"My Hero Academia,\" and I absolutely loved it! Can you recommend some similar anime series for me to check out?",
+   "generated": "{\n  \"function\": \"getRecommendations\",\n  \"parameters\": {\n    \"animeId\": 123456\n  }\n}",
+   "final": {
+    "function": "getRecommendations",
+    "parameters": {
+     "animeId": 123456
+    }
+   },
+   "gold": {
+    "function": "searchAnime",
+    "parameters": {
+     "query": "Your Lie in April."
+    }
+   },
+   "auto_labels": [
+    "WRONG_FUNCTION"
+   ]
+  },
+  {
+   "id": "R0020",
+   "model": "microsoft/Phi-3.5-mini-instruct",
+   "group": "correct, left untouched",
+   "query": "I need the last update date and name of the airport with the ICAO code \"EDDB\" in Germany.",
+   "generated": "{\"function\": \"AirportApi_getAirport\", \"parameters\": {\"icao_code\": \"EDDB\"}}",
+   "final": {
+    "function": "AirportApi_getAirport",
+    "parameters": {
+     "icao_code": "EDDB"
+    }
+   },
+   "gold": {
+    "function": "AirportApi_getAirport",
+    "parameters": {
+     "icao_code": "EDDB"
+    }
+   },
+   "auto_labels": []
+  },
+  {
+   "id": "R0084",
+   "model": "microsoft/Phi-3.5-mini-instruct",
+   "group": "correct, left untouched",
+   "query": "I'm planning to make a fruit salad, and I want to include fruits from the \"Sapindales\" order. Can you fetch a list of fruits belonging to this order using the API? I need their names, families, and nutritional values.",
+   "generated": "{\"function\": \"getFruitsByOrder\", \"parameters\": {\"order\": \"Sapindales\"}}",
+   "final": {
+    "function": "getFruitsByOrder",
+    "parameters": {
+     "order": "Sapindales"
+    }
+   },
+   "gold": {
+    "function": "getFruitsByOrder",
+    "parameters": {
+     "order": "Sapindales"
+    }
+   },
+   "auto_labels": []
+  }
+ ]
+}

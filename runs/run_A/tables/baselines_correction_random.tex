@@ -1,0 +1,16 @@
+\begin{table}[t]
+\centering
+\caption{Correction: schema-only vs baselines (random test split)}
+\label{tab:baselines_correction_random}
+\begin{tabular}{lr}
+\hline
+method & exact match \\
+\hline
+no correction (block flagged calls) & 0.345 \\
+similarity-only correction & 0.662 \\
+schema-only (ours) & 0.766 \\
+LLM corrector (subset) & 0.200 \\
+schema-only on that subset & 0.697 \\
+\hline
+\end{tabular}
+\end{table}
